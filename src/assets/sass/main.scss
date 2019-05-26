@@ -1,9 +1,11 @@
-@import "compass/reset";
-@import "../stylesheets/normalize.min.css";
+@import 'compass/reset';
+@import '../stylesheets/normalize.min.css';
 // @import "partials/h5bp";
-@import "partials/grid";
-@import "partials/theme-default";
-@import "partials/utils";
+@import 'partials/grid';
+@import 'partials/theme-default';
+@import 'partials/utils';
+
+@include global-reset;
 body {
   background-color: $color-primary;
 }
@@ -47,10 +49,4 @@ body {
     padding-top: gutter();
     padding-bottom: gutter();
   }
-}
-
-p {
-  padding: 10px;
-  margin: auto;
-  column-count: 3;
 }
