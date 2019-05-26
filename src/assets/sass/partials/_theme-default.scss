@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Prata&display=swap");
+
+$opacity: 0.6;
+
+// As hex codes */
+$color-primary: #ffffff;
+$color-secondary: #aeaeae;
+$color-secondary-2: #e2e2e2;
+// As RGBa codes */
+$rgba-primary: rgba(255, 255, 255, 1);
+$rgba-secondary: rgba(174, 174, 174, 1);
+$rgba-secondary-2: rgba(226, 226, 226, 1);
+
+@function rgba-primary($opacity: 1) {
+  @return rgba(255, 255, 255, $opacity);
+}
+@function rgba-secondary($opacity: 1) {
+  @return rgba(174, 174, 174, $opacity);
+}
+@function rgba-secondary-2($opacity: 1) {
+  @return rgba(226, 226, 226, $opacity);
+}
+
+@mixin rgba-primary($opacity: 1) {
+  color: rgba(255, 255, 255, $opacity) !important;
+}
+
+@mixin rgba-secondary($opacity: 1) {
+  color: rgba(174, 174, 174, $opacity) !important;
+}
+
+@mixin rgba-secondary-2($opacity: 1) {
+  color: rgba(226, 226, 226, $opacity) !important;
+}
+
+* {
+  font-family: "Prata", "Roboto Slab", "Helvetica", serif !important;
+  line-height: 150% !important;
+}
+
+$header-background-color: $color-primary;
+$content-background-color: $color-primary;
+$footer-background-color: rgba-secondary-2(2);
+$link-color: black;
+$link-color-hover: lighten(black, 60%);
+
+$text-color: black;

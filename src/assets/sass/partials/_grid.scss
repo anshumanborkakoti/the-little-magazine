@@ -1,0 +1,53 @@
+@import "susy";
+@import "theme-default";
+$number-of-columns: 16;
+$container-span: $number-of-columns - 2;
+
+$susy: (
+  columns: $number-of-columns,
+  global-box-sizing: border-box,
+  math: fluid,
+  debug: (
+    image: false
+  )
+);
+@include layout($susy float inside);
+//Test
+// div {
+
+//   //border: dotted black 1px;
+// }
+@mixin sub-container-style($height: "none", $color: $header-background-color) {
+  @if $height != "none" {
+    height: $height;
+  }
+  //Test full page width
+  // @include span($number-of-columns narrow);
+
+  background-color: $color;
+  @include span($container-span wider);
+  margin-left: span(1 narrow);
+}
+
+.main-container {
+  height: 100vh;
+  @include container();
+
+  .header {
+    height: 5%;
+    @include sub-container-style();
+  }
+  .magazine-title {
+    height: 20%;
+    @include sub-container-style();
+  }
+  .footer {
+    @include sub-container-style($color: $footer-background-color);
+    height: 5%;
+  }
+
+  .content {
+    @include sub-container-style($color: $content-background-color);
+    height: 70%;
+  }
+}

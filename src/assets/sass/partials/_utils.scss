@@ -1,0 +1,31 @@
+@mixin animate-underline() {
+  &:after {
+    content: "";
+    width: 0px;
+    height: 1px;
+    display: block;
+    background: black;
+    transition: all 300ms ease-in 50ms;
+  }
+
+  &:hover:after {
+    width: 100%;
+  }
+}
+
+@function get-content-height($headerH, $footerH) {
+  @return 100% - ($headerH + $footerH);
+}
+
+@mixin style-header-footer-links {
+  font-size: 12px;
+  .header-nav {
+    a {
+      color: $link-color;
+      @include animate-underline();
+    }
+    li:not(:last-child) {
+      border-right: solid 1px $color-secondary-2;
+    }
+  }
+}
