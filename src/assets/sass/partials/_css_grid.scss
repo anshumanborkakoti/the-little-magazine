@@ -1,0 +1,46 @@
+@import 'theme-default';
+
+@mixin sub-container-style($height: 'none', $color: $header-background-color) {
+  @if $height != 'none' {
+    height: $height;
+  }
+  background-color: $color;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 90% 1fr;
+  grid-template-rows: auto;
+  height: 100vh;
+  .left-gutter {
+    grid-row: 1/-1;
+    grid-column: 1/2;
+  }
+
+  .right-gutter {
+    grid-row: 1/-1;
+    grid-column: 3/-1;
+  }
+  .page-content-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 8fr 30fr auto;
+    row-gap: 10px;
+    .header {
+      grid-row: 1/2;
+      @include sub-container-style();
+    }
+    .magazine-title {
+      grid-row: 2/3;
+      @include sub-container-style();
+    }
+    .footer {
+      grid-row: 4/5;
+      @include sub-container-style($color: $footer-background-color);
+    }
+    .content {
+      grid-row: 3/4;
+      @include sub-container-style($color: $content-background-color);
+    }
+  }
+}
