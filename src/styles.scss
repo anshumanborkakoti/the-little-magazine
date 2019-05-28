@@ -1,10 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'assets/stylesheets/ie.css';
+@import 'assets/stylesheets/main.css';
 @import 'assets/stylesheets/normalize.min.css';
 @import '~bootstrap/scss/bootstrap';
-@import 'assets/stylesheets/main.css';
+@import 'assets/sass/partials/utils';
 @import 'assets/sass/partials/theme-default';
+@import 'assets/sass/partials/css_grid';
 
-.link-active {
-  color: $color-secondary;
+body {
+  background-color: $color-primary;
+}
+.main-container {
+  font-size: 15px;
+  color: $text-color;
 }

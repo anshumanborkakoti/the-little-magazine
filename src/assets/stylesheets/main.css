@@ -1,6 +1,3 @@
-@import url(../stylesheets/normalize.min.css);
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Prata&display=swap");
 /* line 5, C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -66,66 +63,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 37, ../sass/partials/_theme-default.scss */
-* {
-  font-family: "Prata", "Roboto Slab", "Helvetica", serif !important;
-  line-height: 150% !important;
-}
-
-/* line 32, ../sass/partials/_grid.scss */
-.main-container {
-  height: 100vh;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* line 12, C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/susy-2.2.14/sass/susy/output/support/_clearfix.scss */
-.main-container:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-/* line 36, ../sass/partials/_grid.scss */
-.main-container .header {
-  height: 5%;
-  background-color: #ffffff;
-  width: 88.75%;
-  float: left;
-  padding-left: 0.625%;
-  padding-right: 0.625%;
-  margin-left: 5%;
-}
-/* line 40, ../sass/partials/_grid.scss */
-.main-container .magazine-title {
-  height: 20%;
-  background-color: #ffffff;
-  width: 88.75%;
-  float: left;
-  padding-left: 0.625%;
-  padding-right: 0.625%;
-  margin-left: 5%;
-}
-/* line 44, ../sass/partials/_grid.scss */
-.main-container .footer {
-  background-color: #e2e2e2;
-  width: 88.75%;
-  float: left;
-  padding-left: 0.625%;
-  padding-right: 0.625%;
-  margin-left: 5%;
-  height: 5%;
-}
-/* line 49, ../sass/partials/_grid.scss */
-.main-container .content {
-  background-color: #ffffff;
-  width: 88.75%;
-  float: left;
-  padding-left: 0.625%;
-  padding-right: 0.625%;
-  margin-left: 5%;
-  height: 70%;
-}
-
 /* line 5, C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -189,82 +126,4 @@ a img {
 /* line 116, C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
-}
-
-/* line 9, ../sass/main.scss */
-body {
-  background-color: #ffffff;
-}
-
-/* line 12, ../sass/main.scss */
-.main-container {
-  font-size: 15px;
-  color: black;
-}
-/* line 15, ../sass/main.scss */
-.main-container .header {
-  font-size: 12px;
-}
-/* line 23, ../sass/partials/_utils.scss */
-.main-container .header .header-nav a {
-  color: black;
-}
-/* line 2, ../sass/partials/_utils.scss */
-.main-container .header .header-nav a:after {
-  content: "";
-  width: 0px;
-  height: 1px;
-  display: block;
-  background: black;
-  transition: all 300ms ease-in 50ms;
-}
-/* line 11, ../sass/partials/_utils.scss */
-.main-container .header .header-nav a:hover:after {
-  width: 100%;
-}
-/* line 27, ../sass/partials/_utils.scss */
-.main-container .header .header-nav li:not(:last-child) {
-  border-right: solid 1px #e2e2e2;
-}
-/* line 18, ../sass/main.scss */
-.main-container .magazine-title {
-  padding-top: 1.875%;
-  vertical-align: middle;
-  font-size: 60px;
-  border-bottom: solid 2px #e2e2e2;
-}
-/* line 25, ../sass/main.scss */
-.main-container .content .mainImage {
-  width: 63.75%;
-  float: left;
-  padding-left: 0.625%;
-  padding-right: 0.625%;
-  height: 80%;
-  display: inline-block;
-  margin: 3.125%;
-  box-shadow: 5px 10px 10px #c9c9c9;
-  object-fit: cover;
-}
-/* line 33, ../sass/main.scss */
-.main-container .content .articles {
-  display: inline-block;
-  height: 80%;
-  width: 23.75%;
-  float: left;
-  padding-left: 0.625%;
-  padding-right: 0.625%;
-  margin: 3.125%;
-  overflow: hidden;
-}
-/* line 40, ../sass/main.scss */
-.main-container .content .article-heading {
-  font-size: 25px;
-}
-/* line 45, ../sass/main.scss */
-.main-container .footer {
-  text-align: center;
-  font-style: italic;
-  font-size: 12px;
-  padding-top: 0.625%;
-  padding-bottom: 0.625%;
 }

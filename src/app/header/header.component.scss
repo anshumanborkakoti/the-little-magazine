@@ -1,0 +1,5 @@
+@import '../../assets/sass/partials/utils';
+@import '../../assets/sass/partials/theme-default';
+.header {
+  @include style-header-footer-links;
+}
