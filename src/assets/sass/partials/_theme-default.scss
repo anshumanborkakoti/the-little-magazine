@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Prata&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Prata&display=swap');
 
 $opacity: 0.6;
 
@@ -34,8 +34,11 @@ $rgba-secondary-2: rgba(226, 226, 226, 1);
   color: rgba(226, 226, 226, $opacity) !important;
 }
 
+$default-font-size: 15px;
+$body-font-size: 1.25em;
+
 * {
-  font-family: "Prata", "Roboto Slab", "Helvetica", serif !important;
+  font-family: 'Prata', 'Roboto Slab', 'Helvetica', serif !important;
   line-height: 150% !important;
 }
 

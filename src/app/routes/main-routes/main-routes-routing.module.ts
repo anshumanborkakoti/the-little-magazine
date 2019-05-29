@@ -10,7 +10,7 @@ import { IssuesComponent } from 'src/app/page/issues/issues.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: MainPageComponent
   },
   {

@@ -11,6 +11,18 @@ body {
   background-color: $color-primary;
 }
 .main-container {
-  font-size: 15px;
+  font-size: $default-font-size !important  ;
   color: $text-color;
+}
+pre {
+  text-align: center;
+  vertical-align: middle;
+  white-space: pre-line;
+  padding-top: 5%;
+  font-size: $body-font-size;
+  align-self: center;
+}
+
+.link-active {
+  font-weight: 800;
 }
