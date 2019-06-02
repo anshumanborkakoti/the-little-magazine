@@ -2,7 +2,6 @@
 @import 'assets/stylesheets/ie.css';
 @import 'assets/stylesheets/main.css';
 @import 'assets/stylesheets/normalize.min.css';
-@import '~bootstrap/scss/bootstrap';
 @import 'assets/sass/partials/utils';
 @import 'assets/sass/partials/theme-default';
 @import 'assets/sass/partials/css_grid';
@@ -15,7 +14,7 @@ body {
   color: $text-color;
 }
 pre {
-  text-align: center;
+  text-align: left;
   vertical-align: middle;
   white-space: pre-line;
   padding-top: 5%;

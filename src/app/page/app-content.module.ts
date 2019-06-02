@@ -6,6 +6,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { SubmissionsComponent } from './submissions/submissions.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { IssuesComponent } from './issues/issues.component';
+import { MastheadComponent } from './masthead/masthead/masthead.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { IssuesComponent } from './issues/issues.component';
     CategoriesComponent,
     SubmissionsComponent,
     ContactusComponent,
-    IssuesComponent
+    IssuesComponent,
+    MastheadComponent
   ],
   imports: [CommonModule],
   exports: [MainPageComponent, AboutusComponent]

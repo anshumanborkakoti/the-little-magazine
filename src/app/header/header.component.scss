@@ -1,5 +1,37 @@
 @import '../../assets/sass/partials/utils';
 @import '../../assets/sass/partials/theme-default';
 .header {
-  @include style-header-footer-links;
+  @include style-header-footer-links('header-nav');
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  margin-top: 20px;
+
+  .header-nav {
+    display: inline-grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, min-content));
+    grid-auto-columns: minmax(100px, min-content);
+    justify-items: center;
+    align-items: center;
+    grid-auto-flow: column;
+  }
+
+  .socialIcons {
+    vertical-align: middle;
+    justify-self: end;
+    ul {
+      display: inline-grid;
+      width: 100%;
+      grid-template-columns: repeat(3, minmax(min-content, 20px));
+      grid-template-rows: repeat(auto-fit, minmax(min-content, 20px));
+      justify-items: end;
+      grid-auto-flow: column;
+      column-gap: 10px;
+
+      li a img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
 }

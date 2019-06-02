@@ -7,6 +7,7 @@ import { CategoriesComponent } from 'src/app/page/categories/categories.componen
 import { SubmissionsComponent } from 'src/app/page/submissions/submissions.component';
 import { ContactusComponent } from 'src/app/page/contactus/contactus.component';
 import { IssuesComponent } from 'src/app/page/issues/issues.component';
+import { MastheadComponent } from 'src/app/page/masthead/masthead/masthead.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'issues',
     component: IssuesComponent
+  },
+  {
+    path: 'masthead',
+    component: MastheadComponent
   },
   {
     path: '**',

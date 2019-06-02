@@ -1,0 +1,4 @@
+@import '../../../assets/sass/partials/utils';
+.comingsoon {
+  @include coming-soon('../../../assets/img/Coming soon.png');
+}
