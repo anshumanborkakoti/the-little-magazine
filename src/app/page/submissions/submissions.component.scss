@@ -1,4 +1,4 @@
-div {
-  overflow-y: auto;
-  height: 70vh;
+@import '../../../assets/sass/partials/utils';
+.process {
+  @include content-inner;
 }

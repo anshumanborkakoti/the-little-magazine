@@ -1,6 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Prata&display=swap');
 
+@mixin primary-bold-font {
+  font-family: 'Prata', 'Roboto Slab', 'Helvetica', serif !important;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin primary-bold-italic-font {
+  font-family: 'Prata', 'Roboto Slab', 'Helvetica', serif !important;
+  font-weight: 700;
+  font-style: italic;
+}
+
+@mixin primary-italic-font {
+  font-family: 'Prata', 'Roboto Slab', 'Helvetica', serif !important;
+  font-weight: 400;
+  font-style: italic;
+}
+@mixin primary-regular-font {
+  font-family: 'Prata', 'Roboto Slab', 'Helvetica', serif !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
 $opacity: 0.6;
 
 // As hex codes */
@@ -34,11 +57,10 @@ $rgba-secondary-2: rgba(226, 226, 226, 1);
   color: rgba(226, 226, 226, $opacity) !important;
 }
 
-$default-font-size: 15px;
-$body-font-size: 1.25em;
+$default-font-size: 18px;
 
 * {
-  font-family: 'Prata', 'Roboto Slab', 'Helvetica', serif !important;
+  @include primary-regular-font;
   line-height: 150% !important;
 }
 

@@ -17,11 +17,12 @@ pre {
   text-align: left;
   vertical-align: middle;
   white-space: pre-line;
-  padding-top: 5%;
-  font-size: $body-font-size;
+  padding-top: 20px;
+  font-size: $default-font-size !important;
   align-self: center;
 }
 
 .link-active {
   font-weight: 800;
 }
+@include createHeaderStyles(6, $default-font-size/16px);

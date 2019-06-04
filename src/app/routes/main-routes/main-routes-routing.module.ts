@@ -8,6 +8,7 @@ import { SubmissionsComponent } from 'src/app/page/submissions/submissions.compo
 import { ContactusComponent } from 'src/app/page/contactus/contactus.component';
 import { IssuesComponent } from 'src/app/page/issues/issues.component';
 import { MastheadComponent } from 'src/app/page/masthead/masthead/masthead.component';
+import { GuidelinesComponent } from 'src/app/page/guidelines/guidelines.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
     component: SubmissionsComponent
   },
   {
+    path: 'guidelines',
+    component: GuidelinesComponent
+  },
+  {
     path: 'contactus',
     component: ContactusComponent
   },
@@ -40,7 +45,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: MainPageComponent
+    redirectTo: '/home'
   }
 ];
 

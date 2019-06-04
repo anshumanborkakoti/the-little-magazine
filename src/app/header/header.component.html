@@ -1,41 +1,18 @@
 <div class="header">
   <ul class="header-nav">
-    <li>
-      <a href="#" routerLink="home" routerLinkActive="link-active">Home</a>
-    </li>
-    <li>
-      <a href="#" routerLink="/issues" routerLinkActive="link-active">Issues</a>
-    </li>
-    <li>
-      <a href="#" routerLink="/categories" routerLinkActive="link-active"
-        >Categories</a
-      >
-    </li>
-    <li>
-      <a href="#" routerLink="/aboutus" routerLinkActive="link-active"
-        >About us</a
-      >
-    </li>
-    <li>
-      <a href="#" routerLink="/submissions" routerLinkActive="link-active"
-        >Submissions</a
-      >
-    </li>
-    <li>
-      <a href="#" routerLink="/masthead" routerLinkActive="link-active">
-        Masthead
-      </a>
-    </li>
-    <li>
-      <a href="#" routerLink="/contactus" routerLinkActive="link-active"
-        >Contact us</a
-      >
+    <li *ngFor="let header of headers">
+      <a href="#" [routerLink]="header.route" routerLinkActive="link-active">{{
+        header.label
+      }}</a>
     </li>
   </ul>
   <div class="socialIcons">
     <ul>
       <li>
-        <a href="#">
+        <a
+          href="https://www.facebook.com/thelittlejournalofneindia/"
+          target="_blank"
+        >
           <img
             src="../../assets/img/icons/_ionicons_svg_logo-facebook.svg"
             alt="Facebook"
@@ -43,16 +20,16 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="https://twitter.com/TNeindia" target="_blank">
           <img
-            src="../../assets/img/icons/_ionicons_svg_logo-instagram.svg"
-            alt="Instagram"
+            src="../../assets/img/icons/_ionicons_svg_logo-twitter.svg"
+            alt="Twitter"
           />
         </a>
       </li>
 
       <li>
-        <a href="#">
+        <a href="https://www.pinterest.com/little5114" target="_blank">
           <img
             src="../../assets/img/icons/_ionicons_svg_logo-pinterest.svg"
             alt="Pinterest"

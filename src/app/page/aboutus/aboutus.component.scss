@@ -1,3 +1,7 @@
+@import '../../../assets/sass/partials/utils';
 pre {
   text-align: left;
+}
+.aboutus {
+  @include content-inner;
 }
