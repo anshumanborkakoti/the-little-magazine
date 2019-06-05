@@ -13,11 +13,11 @@ body {
   font-size: $default-font-size !important  ;
   color: $text-color;
 }
+p,
 pre {
-  text-align: left;
+  text-align: justify;
   vertical-align: middle;
   white-space: pre-line;
-  padding-top: 20px;
   font-size: $default-font-size !important;
   align-self: center;
 }
@@ -25,4 +25,4 @@ pre {
 .link-active {
   font-weight: 800;
 }
-@include createHeaderStyles(6, $default-font-size/16px);
+@include createHeaderStyles(10, $default-font-size/16px);
