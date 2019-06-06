@@ -1,4 +1,5 @@
 @import '../../assets/sass/partials/theme-default';
+@import '../../assets/sass/partials/breakpoints';
 @import './title-breakpoints.component.scss';
 a {
   color: black;
@@ -9,18 +10,39 @@ a {
     text-decoration: none;
   }
 }
-.magazine-title {
-  vertical-align: middle;
-  font-size: 60px;
-  border-bottom: solid 2px rgba-secondary-2(0.7);
-  padding-top: 20px;
+@mixin medium-and-larger-screen {
   display: inline-grid;
-  width: 100%;
   grid-template-columns: 100px auto;
   grid-template-rows: 1fr auto;
   justify-items: start;
   align-items: end;
   column-gap: 10px;
+  font-size: 60px;
+  row-gap: 20px;
+}
+
+.magazine-title {
+  vertical-align: middle;
+
+  width: 100%;
+
+  @include title-small-screen {
+    display: inline-grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr auto;
+    justify-items: center;
+    align-items: center;
+    font-size: 40px;
+  }
+
+  @include title-medium-screen {
+    @include medium-and-larger-screen;
+  }
+
+  @include title-larger-screen {
+    @include medium-and-larger-screen;
+  }
+  border-bottom: solid 2px rgba-secondary-2(0.7);
 
   .logo {
     align-self: center;

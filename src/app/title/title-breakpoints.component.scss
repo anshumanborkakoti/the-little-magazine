@@ -1,11 +1,16 @@
-@mixin larger-screen {
-  @media only screen and (min-width:950px) {
+@mixin title-larger-screen {
+  @media only screen and (min-width: 950px) {
+    @content;
+  }
+}
+@mixin title-medium-screen {
+  @media only screen and (min-width: 500px) and (max-width: 950px) {
     @content;
   }
 }
 
-@mixin small-screen {
-  @media only screen and (max-width: 950px) {
+@mixin title-small-screen {
+  @media only screen and (max-width: 500px) {
     @content;
   }
 }

@@ -57,8 +57,6 @@ $rgba-secondary-2: rgba(226, 226, 226, 1);
   color: rgba(226, 226, 226, $opacity) !important;
 }
 
-$default-font-size: 18px;
-
 * {
   @include primary-regular-font;
   line-height: 150% !important;

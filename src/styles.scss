@@ -5,12 +5,27 @@
 @import 'assets/sass/partials/utils';
 @import 'assets/sass/partials/theme-default';
 @import 'assets/sass/partials/css_grid';
+@import 'assets/sass/partials/breakpoints';
 
 body {
   background-color: $color-primary;
 }
+$default-font-size: 18px;
+$default-font-size-sm: 15px;
+@mixin font-size-rwd {
+  @include small-screen {
+    font-size: $default-font-size-sm;
+  }
+  @include larger-screen {
+    font-size: $default-font-size;
+  }
+}
+* {
+  @include font-size-rwd;
+}
+
 .main-container {
-  font-size: $default-font-size !important  ;
+  @include font-size-rwd;
   color: $text-color;
 }
 p,
@@ -18,11 +33,20 @@ pre {
   text-align: justify;
   vertical-align: middle;
   white-space: pre-line;
-  font-size: $default-font-size !important;
+  @include font-size-rwd;
   align-self: center;
 }
 
 .link-active {
   font-weight: 800;
 }
-@include createHeaderStyles(10, $default-font-size/16px);
+
+@include small-screen {
+  @include createHeaderStyles(10, $default-font-size-sm/16px);
+}
+@include larger-screen {
+  @include createHeaderStyles(10, $default-font-size/16px);
+  .first {
+    margin-top: 0.8em;
+  }
+}
