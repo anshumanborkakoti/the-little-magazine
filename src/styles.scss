@@ -23,11 +23,6 @@ $default-font-size-sm: 15px;
 * {
   @include font-size-rwd;
 }
-
-.main-container {
-  @include font-size-rwd;
-  color: $text-color;
-}
 p,
 pre {
   text-align: justify;

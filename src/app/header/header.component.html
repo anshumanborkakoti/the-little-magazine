@@ -1,4 +1,9 @@
 <div class="header">
+  <img
+    class="header-menu-list"
+    src="../../assets/img/icons/_ionicons_svg_md-list.svg"
+    (click)="openModal()"
+  />
   <ul class="header-nav">
     <li *ngFor="let header of headers">
       <a href="#" [routerLink]="header.route" routerLinkActive="link-active">{{
@@ -37,5 +42,25 @@
         </a>
       </li>
     </ul>
+  </div>
+  <div class="modal-dialog" *ngIf="!hideModal">
+    <div class="modal-content">
+      <img
+        class="modal-close"
+        src="../../assets/img/icons/_ionicons_svg_md-close.svg"
+        (click)="closeModal()"
+      />
+      <ul class="header-nav-modal">
+        <li *ngFor="let h of headers">
+          <a
+            href="#"
+            [routerLink]="h.route"
+            routerLinkActive="link-active"
+            (click)="closeModal()"
+            >{{ h.label }}</a
+          >
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

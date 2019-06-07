@@ -3,9 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss', './util-modal.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  hideModal = true;
   headers: Array<{ label: string; route: string }> = [
     {
       label: 'Home',
@@ -42,5 +43,12 @@ export class HeaderComponent implements OnInit {
   ];
   constructor() {}
 
+  openModal() {
+    this.hideModal = false;
+  }
+
+  closeModal() {
+    this.hideModal = true;
+  }
   ngOnInit() {}
 }
