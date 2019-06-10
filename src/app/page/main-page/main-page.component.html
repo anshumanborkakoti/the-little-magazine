@@ -1,5 +1,13 @@
 <div class="main-content">
-  <img src="../../../assets/img/DSCF0907.JPG" class="mainImage" alt="..." />
+  <img
+    class="mainImage"
+    [srcset]="srcset"
+    sizes="(max-width:800px) 95vw,
+    (min-width:800px and max-width:1800px) 100vw,
+     100vw"
+    src="../../../assets/img/DSCF0907_large.jpg"
+    alt="Typewriter"
+  />
   <div class="imageOverlay">
     <div class="overlayText">
       A journal featuring elegant art and literary content from northeast India.
