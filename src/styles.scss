@@ -45,3 +45,9 @@ pre {
     margin-top: 0.8em;
   }
 }
+a {
+  text-decoration-color: black;
+  &:visited {
+    color: black;
+  }
+}

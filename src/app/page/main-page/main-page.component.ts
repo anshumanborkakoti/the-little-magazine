@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class MainPageComponent implements OnInit {
-  srcset: string = `../../../assets/img/DSCF0907_small.JPG 500w,
+  srcset = `../../../assets/img/DSCF0907_small.JPG 500w,
       ../../../assets/img/DSCF0907_medium.JPG 1000w,
       ../../../assets/img/DSCF0907_large.jpg 4896w`;
   constructor() {}

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainPageComponent } from 'src/app/page/main-page/main-page.component';
 import { AboutusComponent } from 'src/app/page/aboutus/aboutus.component';
-import { ContentModule } from 'src/app/page/app-content.module';
 import { CategoriesComponent } from 'src/app/page/categories/categories.component';
 import { SubmissionsComponent } from 'src/app/page/submissions/submissions.component';
 import { ContactusComponent } from 'src/app/page/contactus/contactus.component';
@@ -50,7 +49,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), ContentModule],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class MainRoutesRoutingModule {}
