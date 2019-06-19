@@ -1,1 +1,10 @@
-<div class="comingsoon"></div>
+<!-- <div class="comingsoon"></div> -->
+<div class="categories">
+  <app-tiles
+    *ngFor="let category of categories"
+    [bodyContent]="category.description"
+    [headerImagePath]="category.imagePath"
+    [footerContent]="category.footer"
+    [header]="category.name"
+  ></app-tiles>
+</div>

@@ -9,6 +9,7 @@ import { IssuesComponent } from './issues/issues.component';
 import { MastheadComponent } from './masthead/masthead/masthead.component';
 import { GuidelinesComponent } from './guidelines/guidelines.component';
 import { MainRoutesRoutingModule } from '../routes/main-routes/main-routes-routing.module';
+import { ReusableComponentsModule } from '../reusable/reusable-components/reusable-components.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { MainRoutesRoutingModule } from '../routes/main-routes/main-routes-routi
     MastheadComponent,
     GuidelinesComponent
   ],
-  imports: [CommonModule, MainRoutesRoutingModule],
+  imports: [CommonModule, MainRoutesRoutingModule, ReusableComponentsModule],
   exports: [
     MainPageComponent,
     AboutusComponent,

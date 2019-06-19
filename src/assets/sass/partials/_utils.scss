@@ -75,3 +75,20 @@
 @mixin content-inner {
   overflow-y: auto;
 }
+
+@mixin tiles-container($max-column-size: 350px, $max-row-size: 300px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, $max-column-size));
+  grid-template-rows: repeat(auto-fit, minmax(auto, $max-row-size));
+  grid-auto-rows: minmax(auto, $max-row-size);
+  grid-auto-columns: minmax(auto, $max-column-size);
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  grid-gap: 15px;
+}
+
+@mixin text-wrap-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

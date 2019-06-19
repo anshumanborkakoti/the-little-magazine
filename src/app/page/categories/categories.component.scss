@@ -2,3 +2,6 @@
 .comingsoon {
   @include coming-soon('../../../../assets/img/cs_opt.png');
 }
+.categories {
+  @include tiles-container(350px, 300px);
+}
