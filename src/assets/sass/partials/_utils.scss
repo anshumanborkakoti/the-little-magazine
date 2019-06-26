@@ -84,7 +84,7 @@
   grid-auto-columns: minmax(auto, $max-column-size);
   justify-content: space-evenly;
   align-content: space-evenly;
-  grid-gap: 15px;
+  grid-gap: 20px;
 }
 
 @mixin text-wrap-ellipsis {
