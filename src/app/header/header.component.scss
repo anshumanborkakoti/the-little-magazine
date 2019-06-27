@@ -26,7 +26,7 @@
   }
 }
 
-@include larger-screen {
+@mixin nav-list {
   .header {
     @include style-header-footer-links('header-nav');
     display: grid;
@@ -47,7 +47,7 @@
   }
 }
 
-@include small-screen {
+@mixin hamburger {
   .header {
     @include style-header-footer-links('header-nav', false);
     display: grid;
@@ -61,4 +61,15 @@
       display: none;
     }
   }
+}
+
+@include larger-screen {
+  @include nav-list();
+}
+
+@include medium-screen {
+  @include hamburger();
+}
+@include small-screen {
+  @include hamburger();
 }

@@ -16,6 +16,9 @@ $default-font-size-sm: 15px;
   @include small-screen {
     font-size: $default-font-size-sm;
   }
+  @include medium-screen {
+    font-size: $default-font-size-sm;
+  }
   @include larger-screen {
     font-size: $default-font-size;
   }
@@ -37,6 +40,9 @@ pre {
 }
 
 @include small-screen {
+  @include createHeaderStyles(10, $default-font-size-sm/16px);
+}
+@include medium-screen {
   @include createHeaderStyles(10, $default-font-size-sm/16px);
 }
 @include larger-screen {

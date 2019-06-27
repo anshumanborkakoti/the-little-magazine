@@ -5,8 +5,7 @@
   @include larger-screen {
     display: none;
   }
-
-  @include small-screen {
+  @mixin show-dialog {
     position: absolute;
     top: 2vh;
     left: 2vw;
@@ -43,5 +42,13 @@
         }
       }
     }
+  }
+
+  @include small-screen {
+    @include show-dialog();
+  }
+
+  @include medium-screen {
+    @include show-dialog();
   }
 }

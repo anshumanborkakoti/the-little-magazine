@@ -33,12 +33,6 @@
   .content {
     grid-row: 3/4;
     min-height: 65vh;
-    // overflow-y: auto;
-    // @include larger-screen {
-    //   min-height: 20vh;
-    //   height: 65vh;
-    // }
-
     @include sub-container-style($color: $content-background-color);
   }
 }
