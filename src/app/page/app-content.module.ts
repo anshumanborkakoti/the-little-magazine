@@ -10,6 +10,13 @@ import { MastheadComponent } from './masthead/masthead/masthead.component';
 import { GuidelinesComponent } from './guidelines/guidelines.component';
 import { MainRoutesRoutingModule } from '../routes/main-routes/main-routes-routing.module';
 import { ReusableComponentsModule } from '../reusable/reusable-components/reusable-components.module';
+import { CloudinaryModule } from '@cloudinary/angular-5.x';
+import { environment } from 'src/environments/environment';
+import { Cloudinary } from 'cloudinary-core';
+
+export const cloudinaryLib = {
+  Cloudinary: Cloudinary
+};
 
 @NgModule({
   declarations: [
@@ -22,7 +29,12 @@ import { ReusableComponentsModule } from '../reusable/reusable-components/reusab
     MastheadComponent,
     GuidelinesComponent
   ],
-  imports: [CommonModule, MainRoutesRoutingModule, ReusableComponentsModule],
+  imports: [
+    CommonModule,
+    MainRoutesRoutingModule,
+    ReusableComponentsModule,
+    CloudinaryModule.forRoot(cloudinaryLib, { cloud_name: environment.cloudinary_cloud_name })
+  ],
   exports: [
     MainPageComponent,
     AboutusComponent,
@@ -34,4 +46,4 @@ import { ReusableComponentsModule } from '../reusable/reusable-components/reusab
     GuidelinesComponent
   ]
 })
-export class ContentModule {}
+export class ContentModule { }

@@ -15,8 +15,12 @@ import { TitleComponent } from './title/title.component';
     FooterComponent,
     TitleComponent
   ],
-  imports: [BrowserModule, AppBootstrapModule, MainRoutesModule],
+  imports: [
+    BrowserModule,
+    AppBootstrapModule,
+    MainRoutesModule
+  ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

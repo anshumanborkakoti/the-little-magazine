@@ -92,3 +92,14 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+@mixin tiles-common-styling {
+  @include larger-screen {
+    box-shadow: 5px 5px 10px darken(rgba-secondary-2(0.7), 10%);
+  }
+  @include medium-screen {
+    box-shadow: 5px 5px 10px darken(rgba-secondary-2(0.7), 10%);
+  }
+  background-color: lighten($color-secondary, 25%);
+  border: 2px solid darken($color-primary, 5%);
+}

@@ -1,1 +1,23 @@
-<div class="comingsoon"></div>
+<div class="masthead-container">
+<article *ngFor="let masthead of getContent()">
+  <div class="bio-image">
+    <img
+      class="bioImage"
+      [clSrc]="masthead.image"
+      fetch-format="auto"
+      quality="auto"
+      dpr="auto"
+      width="auto"
+      responsive
+      type="fetch"
+    />
+  </div>
+  <div class="bio-container">
+    <div class="bio-header">{{ masthead.bioHeader }}</div>
+    <div class="bio-content">
+      {{ masthead.bioContent }}
+    </div>
+  </div>
+</article>
+</div>
+

@@ -9,4 +9,4 @@ import { ContentModule } from 'src/app/page/app-content.module';
   imports: [CommonModule, ContentModule, MainRoutesRoutingModule],
   exports: [MainRoutesRoutingModule]
 })
-export class MainRoutesModule {}
+export class MainRoutesModule { }
