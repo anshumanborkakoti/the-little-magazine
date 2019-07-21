@@ -11,34 +11,22 @@ export class CategoriesComponent implements OnInit {
       name: 'Poetry',
       imagePath: '../../../assets/img/cs_opt.png',
       description: 'The best of poetry',
-      footer: '11th June 2016'
+      footer: new Date()
     },
     {
-      name: 'Poetry',
+      name: 'Photographs',
       imagePath: '../../../assets/img/cs_opt.png',
-      description: 'The best of poetry',
-      footer: '11th June 2016'
+      description: 'The best of photographs',
+      footer: new Date()
     },
     {
-      name: 'Poetry',
+      name: 'Non fiction',
       imagePath: '../../../assets/img/cs_opt.png',
-      description: 'The best of poetry',
-      footer: '11th June 2016'
-    },
-    {
-      name: 'Poetry',
-      imagePath: '../../../assets/img/cs_opt.png',
-      description: 'The best of poetry',
-      footer: '11th June 2016'
-    },
-    {
-      name: 'Poetry',
-      imagePath: '../../../assets/img/cs_opt.png',
-      description: 'The best of poetry',
-      footer: '11th June 2016'
+      description: 'The best of essays, stories etc',
+      footer: new Date()
     }
   ];
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

@@ -4,7 +4,7 @@
     *ngFor="let category of categories"
     [bodyContent]="category.description"
     [headerImagePath]="category.imagePath"
-    [footerContent]="category.footer"
+    [footerContent]="category.footer | date: 'MMM yyyy'"
     [header]="category.name"
   ></app-tiles>
 </div> -->

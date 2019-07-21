@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ImageService } from 'src/app/image.service';
 
 @Component({
   selector: 'app-main-page',
@@ -9,10 +10,11 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class MainPageComponent implements OnInit {
-  srcset = `../../../assets/img/DSCF0907_small.JPG 500w,
-      ../../../assets/img/DSCF0907_medium.JPG 1000w,
-      ../../../assets/img/DSCF0907_large.jpg 4896w`;
-  constructor() {}
+  mainImageSource: string;
 
-  ngOnInit() {}
+  constructor(private imageService: ImageService) { }
+
+  ngOnInit() {
+    this.mainImageSource = this.imageService.getImage('Typewriter_main_page');
+  }
 }
