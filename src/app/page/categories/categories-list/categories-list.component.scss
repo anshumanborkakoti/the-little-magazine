@@ -1,5 +1,5 @@
-@import '../../../assets/sass/partials/utils';
-@import '../../../assets/sass/partials/theme-default';
+@import '../../../../assets/sass/partials/utils';
+@import '../../../../assets/sass/partials/theme-default';
 .comingsoon {
   @include coming-soon('../../../../assets/img/cs_opt.png');
 }

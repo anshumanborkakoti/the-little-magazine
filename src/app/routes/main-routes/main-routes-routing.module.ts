@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { MainPageComponent } from 'src/app/page/main-page/main-page.component';
 import { AboutusComponent } from 'src/app/page/aboutus/aboutus.component';
-import { CategoriesComponent } from 'src/app/page/categories/categories.component';
 import { SubmissionsComponent } from 'src/app/page/submissions/submissions.component';
 import { ContactusComponent } from 'src/app/page/contactus/contactus.component';
 import { IssuesComponent } from 'src/app/page/issues/issues.component';
@@ -20,7 +19,7 @@ const routes: Routes = [
   },
   {
     path: 'categories',
-    component: CategoriesComponent
+    loadChildren: () => import('../../page/categories/categories.module').then(m => m.CategoriesModule)
   },
   {
     path: 'submissions',
@@ -49,7 +48,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]
 })
-export class MainRoutesRoutingModule {}
+export class MainRoutesRoutingModule { }

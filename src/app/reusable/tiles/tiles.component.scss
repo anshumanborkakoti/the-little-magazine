@@ -9,7 +9,10 @@ article {
   max-height: 100%;
   cursor: pointer;
   display: inline-grid;
-  grid-template-rows: [image-header-start] 60% [image-header-end header-start] 2em [header-end content-start] 1fr [content-end footer-start] 2em [footer-end];
+  grid-template-rows:
+    [image-header-start] 60% [image-header-end header-start] 2em [header-end content-start] 1fr [content-end footer-start]
+    min-content
+    [footer-end];
   row-gap: 0.5em;
   grid-template-columns: auto;
   border-radius: 10px;
@@ -19,13 +22,14 @@ article {
   @include medium-screen {
     box-shadow: 5px 5px 10px darken(rgba-secondary-2(0.7), 10%);
   }
-  background-color: lighten($color-secondary, 25%);
+  background-color: $color-primary; // lighten($color-secondary, 25%);
   border: 2px solid darken($color-primary, 5%);
   .article-header-image {
     object-fit: cover;
     grid-row: image-header-start/image-header-end;
     width: 100%;
     height: 100%;
+    border-radius: 10px 10px 0 0;
   }
   .article-header {
     grid-row: header-start/header-end;

@@ -1,0 +1,6 @@
+<!-- <div class="comingsoon"></div> -->
+<div class="categories">
+  <app-tiles *ngFor="let category of categories" [bodyContent]="category.thumbnail.content"
+    [headerImagePath]="category.thumbnail.image.secureUrl" [footerContent]="category.thumbnail.footer"
+    [header]="category.thumbnail.header" (click)="onCategorySelected(category.name)"></app-tiles>
+</div>
