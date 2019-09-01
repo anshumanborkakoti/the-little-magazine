@@ -1,0 +1,74 @@
+@import '../../../assets/sass/partials/utils';
+@import '../../../assets/sass/partials/theme-default';
+@import '../../../assets/sass/partials/breakpoints';
+@media only screen and (min-width: 750px) {
+  article {
+    display: grid;
+    grid-template-columns: [image-area-start] 25vw [image-area-end content-area-start] 1fr [content-area-end];
+    grid-template-rows: [row-start] 30vh [row-end];
+    column-gap: 10px;
+    @include tiles-common-styling;
+
+    .bio-image {
+      grid-column: image-area-start/image-area-end;
+      grid-row: row-start/row-end;
+      justify-self: start;
+      .bioImage {
+        max-height: 100%;
+      }
+    }
+    .bio-container {
+      grid-column: content-area-start/content-area-end;
+      grid-row: row-start/row-end;
+      display: inline-grid;
+      grid-template-rows: [bio-header-start] min-content [bio-header-end bio-content-start] 1fr [bio-content-end];
+      row-gap: 10px;
+      justify-content: center;
+      .bio-header {
+        grid-row: bio-header-start/bio-header-end;
+        justify-self: center;
+        @include primary-bold-font;
+      }
+      .bio-content {
+        grid-row: bio-content-start/bio-content-end;
+        white-space: pre-line;
+        overflow-y: auto;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  article {
+    display: grid;
+    grid-template-rows: [image-area-start] 10vh [image-area-end content-area-start] 35vh [content-area-end];
+    grid-template-columns: [column-start] 95vw [column-end];
+    row-gap: 10px;
+    @include tiles-common-styling;
+
+    .bio-image {
+      grid-row: image-area-start/image-area-end;
+      justify-self: center;
+      .bioImage {
+        max-height: 100%;
+      }
+    }
+    .bio-container {
+      grid-row: content-area-start/content-area-end;
+      display: inline-grid;
+      grid-template-rows: [bio-header-start] min-content [bio-header-end bio-content-start] 1fr [bio-content-end];
+      row-gap: 10px;
+      justify-content: center;
+      .bio-header {
+        grid-row: bio-header-start/bio-header-end;
+        justify-self: center;
+        @include primary-bold-font;
+      }
+      .bio-content {
+        grid-row: bio-content-start/bio-content-end;
+        white-space: pre-line;
+        overflow-y: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<div class="detail-container" *ngIf="post.detail.length > 0">
+  <div class="article-header-image-container">
+    <!-- postdetail.image -->
+    <cl-image [public-id]="post.detail[0].image.publicId" quality="auto" dpr="auto" crop="scale" client_hints="true"
+      class="article-header-image" responsive style="width: 100%;height:300px;object-fit: cover;">
+      <cl-transformation fetch-format="auto" type="fetch"></cl-transformation>
+    </cl-image>
+    <div class="article-header-image-caption" [innerHTML]="post.detail[0].caption">
+    </div>
+  </div>
+
+
+  <aside class="contributor-detail">
+    <p>
+      CONTRIBUTOR(S):
+    </p>
+    <!-- post.authors -->
+    <p *ngFor="let author of post.authors">
+      {{ author.name }}
+    </p>
+    <p>&nbsp;</p>
+    <!-- post.issues -->
+    <p>
+      EXTRACT FROM ISSUE(s):
+    </p>
+    <p *ngFor="let issue of post.issues">
+      {{issue.label}}
+    </p>
+  </aside>
+  <article class="article-content">
+    <h1>{{ post.detail[0].header }}
+      <!-- postdetail.header-->
+    </h1>
+    <span [innerHTML]="post.detail[0].content"></span>
+  </article>
+  <div class="article-footer-container">
+    <h2>About the Contributor</h2>
+    <!-- postmodel.authors.details -->
+    <app-bio *ngFor="let author of authors" [bio]="author"></app-bio>
+  </div>
+</div>
+
+<div *ngIf="post.detail.length === 0">
+  <!-- No post details -->
+</div>

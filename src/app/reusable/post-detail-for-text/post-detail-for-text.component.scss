@@ -1,0 +1,49 @@
+.detail-container {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  grid-template-areas:
+    'header-image header-image'
+    'aside article'
+    'article-footer article-footer';
+  column-gap: 20px;
+  row-gap: 20px;
+  align-items: baseline;
+  justify-content: space-around;
+
+  .article-header-image-container {
+    grid-area: header-image;
+    width: 100%;
+    align-self: center;
+  }
+  .article-header-image-caption {
+    text-align: center;
+    font-size: 0.75rem;
+  }
+
+  .contributor-detail {
+    grid-area: aside;
+    justify-self: start;
+    p {
+      font-size: 0.75rem;
+    }
+  }
+  .article-content {
+    grid-area: article;
+    justify-self: start;
+    margin-left: 30px;
+  }
+  .article-footer-container {
+    grid-area: article-footer;
+    app-bio {
+      height: min-content;
+      article {
+        grid-template-rows: [row-start] 20vh [row-end];
+        background-color: transparent;
+        .bio-container .bio-content {
+          align-self: center;
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}

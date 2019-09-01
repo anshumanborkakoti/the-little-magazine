@@ -23,7 +23,7 @@ export class Author extends User implements CmsClass<Author> {
     public email: string = '',
     public address: string = '',
     public roles: string[] = [],
-    private details: Thumbnail = null
+    public details: Thumbnail = null
   ) {
     super(name, username, password, id, email, address, roles);
   }

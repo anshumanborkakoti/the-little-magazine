@@ -1,0 +1,10 @@
+<article>
+  <div class="bio-image">
+    <img class="bioImage" [clSrc]="bio.thumbnail.image.secureUrl" fetch-format="auto" quality="auto" dpr="auto"
+      width="auto" responsive type="fetch" />
+  </div>
+  <div class="bio-container">
+    <div class="bio-header">{{ bio.thumbnail.header }}</div>
+    <div class="bio-content" [innerHTML]="bio.thumbnail.content"></div>
+  </div>
+</article>

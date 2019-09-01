@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { ContentModule } from '../../app-content.module';
 import { ImageService } from 'src/app/image.service';
 import { MastHead } from './masthead.model';
 
@@ -15,7 +14,7 @@ export class MastHeadService {
       new MastHead(
         this.imageService.getImage('masthead/Prarthana_masthead'),
         'Prarthana Banikya, Founder and Managing Editor',
-        `Prarthana Banikya has worked as a climate activist, communications executive, kindergarten teacher, travel consultant and academic author, but mostly, she is a starry-eyed writer. A graduate in Sociology with a certificate in poetry, Prarthana is the recipient of the poetry prize at the 2018 Orange Flower Awards and a 2015 Pushcart prize nominee. You can read her work at http://prarthanabanikya.blogspot.in/`
+        `Prarthana Banikya has worked as a climate activist, communications executive, kindergarten teacher, travel consultant and academic author, but mostly, she is a starry-eyed writer. A graduate in Sociology with a certificate in poetry, Prarthana is the recipient of the poetry prize at the 2018 Orange Flower Awards and a 2015 Pushcart prize nominee. You can read her work at <a href='http://prarthanabanikya.blogspot.in/' target='_blank'>http://prarthanabanikya.blogspot.in/</a>`
       ),
       new MastHead(
         this.imageService.getImage('masthead/Juti_masthead'),

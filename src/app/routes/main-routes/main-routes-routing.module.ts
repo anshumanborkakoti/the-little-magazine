@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules, ExtraOptions } from '@angular/router';
 import { MainPageComponent } from 'src/app/page/main-page/main-page.component';
 import { AboutusComponent } from 'src/app/page/aboutus/aboutus.component';
 import { SubmissionsComponent } from 'src/app/page/submissions/submissions.component';
@@ -47,8 +47,12 @@ const routes: Routes = [
   }
 ];
 
+const routerOptions: ExtraOptions = {
+  preloadingStrategy: PreloadAllModules
+};
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
+  imports: [RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule]
 })
 export class MainRoutesRoutingModule { }

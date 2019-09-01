@@ -1,6 +1,5 @@
-<p>post-list works!</p>
 <div class="posts">
   <app-tiles *ngFor="let post of posts" [bodyContent]="post.thumbnail.content"
     [headerImagePath]="post.thumbnail.image.secureUrl" [footerContent]="post.thumbnail.footer"
-    [header]="post.thumbnail.header"></app-tiles>
+    [header]="post.thumbnail.header" routerLink='{{post.category.name}}/{{post.id}}'></app-tiles>
 </div>
