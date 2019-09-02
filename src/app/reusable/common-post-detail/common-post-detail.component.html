@@ -1,12 +1,10 @@
 <div class="detail-container" *ngIf="post.detail.length > 0">
   <div class="article-header-image-container">
     <!-- postdetail.image -->
-    <cl-image [public-id]="post.detail[0].image.publicId" quality="auto" dpr="auto" crop="scale" client_hints="true"
-      class="article-header-image" responsive style="width: 100%;height:300px;object-fit: cover;">
-      <cl-transformation fetch-format="auto" type="fetch"></cl-transformation>
+    <cl-image [public-id]="post.detail[0].image.publicId" client_hints="true" class="article-header-image" responsive
+      crop="fit" style="height: 30vh;width: 100%; object-fit: cover;">
+      <cl-transformation fetch-format="auto" type="fetch" quality="auto" dpr="auto"></cl-transformation>
     </cl-image>
-    <div class="article-header-image-caption" [innerHTML]="post.detail[0].caption">
-    </div>
   </div>
 
 
@@ -28,10 +26,20 @@
     </p>
   </aside>
   <article class="article-content">
-    <h1>{{ post.detail[0].header }}
-      <!-- postdetail.header-->
-    </h1>
-    <span [innerHTML]="post.detail[0].content"></span>
+    <span *ngIf="!isPhotoMode">
+      <h1>{{ post.detail[0].header }}
+        <!-- postdetail.header-->
+      </h1>
+      <span [innerHTML]="post.detail[0].content"></span>
+    </span>
+
+    <div *ngIf="isPhotoMode">
+      <div class="photo-container">
+        <app-photo-tiles [image]="detail.image" [imageCaption]="detail.caption" *ngFor="let detail of post.detail">
+        </app-photo-tiles>
+      </div>
+
+    </div>
   </article>
   <div class="article-footer-container">
     <h2>About the Contributor</h2>

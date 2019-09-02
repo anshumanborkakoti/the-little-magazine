@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PostDetailForTextComponent } from './post-detail-for-text.component';
+import { PostDetailForTextComponent } from './common-post-detail.component';
 
 describe('PostDetailForTextComponent', () => {
   let component: PostDetailForTextComponent;
@@ -8,9 +8,9 @@ describe('PostDetailForTextComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PostDetailForTextComponent ]
+      declarations: [PostDetailForTextComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

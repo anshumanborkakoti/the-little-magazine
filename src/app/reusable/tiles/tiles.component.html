@@ -1,14 +1,11 @@
 <article>
   <div class="article-header-image">
     <img [clSrc]="headerImagePath" fetch-format="auto" quality="auto" dpr="auto" width="auto" responsive type="fetch"
-      class="article-header-image" />
+      class="article-header-image" crop="fill" />
   </div>
 
   <div class="article-header">{{ header }}</div>
-  <div class="article-content">
-    <p>
-      {{ bodyContent }}
-    </p>
+  <div class="article-content" [innerHTML]="bodyContent">
   </div>
   <div class="article-footer">{{ footerContent }}</div>
 </article>

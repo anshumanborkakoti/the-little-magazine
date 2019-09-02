@@ -1,0 +1,32 @@
+@import '../../../assets/sass/partials/utils';
+@import '../../../assets/sass/partials/theme-default';
+@import '../../../assets/sass/partials/breakpoints';
+
+article {
+  max-height: 100%;
+  cursor: pointer;
+  display: inline-grid;
+  grid-template-rows: [photo-start] 1fr [photo-end caption-start] min-content [caption-end];
+  row-gap: 0.5em;
+  grid-template-columns: auto;
+  border-radius: 10px;
+  background-color: $color-primary;
+  box-shadow: 5px 5px 10px darken(rgba-secondary-2(0.7), 10%);
+  .photo-image {
+    object-fit: cover;
+    grid-row: photo-start/photo-end;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+  .photo-caption {
+    grid-row: caption-start/caption-end;
+    justify-self: center;
+    align-self: center;
+    @include primary-italic-font;
+    max-width: 95%;
+    font-size: 0.75em;
+    overflow-y: auto;
+    padding: 0.5em;
+  }
+}

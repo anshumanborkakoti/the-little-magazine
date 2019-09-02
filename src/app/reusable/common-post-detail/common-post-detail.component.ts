@@ -4,17 +4,22 @@ import { BioModel } from '../bio/bio.model';
 import { MastHeadService } from 'src/app/page/masthead/masthead/masthead.service';
 import { Thumbnail } from 'src/app/models/thumbnail.model';
 import { Image } from 'src/app/models/image.model';
+import { DETAIL_COMPONENT_MODES } from 'src/app/common/util/constants';
 
 @Component({
-  selector: 'app-post-detail-for-text',
-  templateUrl: './post-detail-for-text.component.html',
-  styleUrls: ['./post-detail-for-text.component.scss']
+  selector: 'app-common-post-detail',
+  templateUrl: './common-post-detail.component.html',
+  styleUrls: ['./common-post-detail.component.scss']
 })
 export class PostDetailForTextComponent implements OnInit {
 
   @Input() post: Post;
-  authors: BioModel[];
+  @Input() mode: number;
 
+  authors: BioModel[];
+  isPhotoMode: boolean;
+
+  // TODO remove masthead
   constructor(private mastHeadService: MastHeadService) { }
 
 
@@ -41,6 +46,8 @@ export class PostDetailForTextComponent implements OnInit {
     //   const bio = new BioModel(name, thumbnail);
     //   return bio;
     // });
+
+    this.isPhotoMode = DETAIL_COMPONENT_MODES.PHOTO === this.mode;
     this.authors = this.getContent();
   }
 

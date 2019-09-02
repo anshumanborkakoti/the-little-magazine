@@ -5,7 +5,7 @@ import { PostsService } from '../../posts.service';
 
 @Component({
   selector: 'app-poetry-detail',
-  templateUrl: './poetry-detail.component.html',
+  template: `<app-common-post-detail [post]='post' [mode]=0 ></app-common-post-detail>`,
   styleUrls: ['./poetry-detail.component.scss']
 })
 export class PoetryDetailComponent implements OnInit {
