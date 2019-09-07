@@ -25,7 +25,8 @@ export class Issue implements Tag<Issue> {
     public label = '',
     public thumbnail: Thumbnail = null,
     public published: boolean = false,
-    public archived: boolean = false
+    public archived: boolean = false,
+    public pdf: string = null
   ) {
 
   }

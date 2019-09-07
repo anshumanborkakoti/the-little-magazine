@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PostDetailForTextComponent } from './common-post-detail.component';
+import { CommonPostDetailComponent } from './common-post-detail.component';
 
-describe('PostDetailForTextComponent', () => {
-  let component: PostDetailForTextComponent;
-  let fixture: ComponentFixture<PostDetailForTextComponent>;
+describe('CommonPostDetailComponent', () => {
+  let component: CommonPostDetailComponent;
+  let fixture: ComponentFixture<CommonPostDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PostDetailForTextComponent]
+      declarations: [CommonPostDetailComponent]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PostDetailForTextComponent);
+    fixture = TestBed.createComponent(CommonPostDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

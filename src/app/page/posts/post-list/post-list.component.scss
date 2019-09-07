@@ -1,4 +1,4 @@
 @import '../../../../assets/sass/partials/utils';
 .posts {
-  @include tiles-container();
+  @include tiles-container(350px, auto, auto, 330px);
 }

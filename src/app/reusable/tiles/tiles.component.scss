@@ -1,18 +1,16 @@
 @import '../../../assets/sass/partials/utils';
 @import '../../../assets/sass/partials/theme-default';
 @import '../../../assets/sass/partials/breakpoints';
-.comingsoon {
-  @include coming-soon('../../../../assets/img/cs_opt.png');
-}
 
 article {
   max-height: 100%;
   cursor: pointer;
   display: inline-grid;
   grid-template-rows:
-    [image-header-start] 60% [image-header-end header-start] 2em [header-end content-start] 1fr [content-end footer-start]
-    min-content
-    [footer-end];
+    [image-header-start] 1fr [image-header-end header-start]
+    min-content [header-end content-start]
+    min-content [content-end footer-start]
+    min-content [footer-end];
   row-gap: 0.5em;
   grid-template-columns: auto;
   border-radius: 10px;

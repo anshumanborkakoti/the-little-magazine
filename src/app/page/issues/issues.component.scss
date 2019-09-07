@@ -1,4 +1,5 @@
-@import '../../../assets/sass/partials/utils';
-.comingsoon {
-  @include coming-soon('../../../../assets/img/cs_opt.png');
+iframe {
+  width: 80%;
+  height: 80vh;
+  margin-left: 10vw;
 }

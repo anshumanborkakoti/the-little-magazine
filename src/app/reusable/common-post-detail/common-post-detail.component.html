@@ -10,18 +10,18 @@
 
   <aside class="contributor-detail">
     <p>
-      CONTRIBUTOR(S):
+      CONTRIBUTOR:
     </p>
     <!-- post.authors -->
-    <p *ngFor="let author of post.authors">
+    <p *ngFor="let author of post.authors" class="bold">
       {{ author.name }}
     </p>
     <p>&nbsp;</p>
     <!-- post.issues -->
     <p>
-      EXTRACT FROM ISSUE(s):
+      ISSUE(s):
     </p>
-    <p *ngFor="let issue of post.issues">
+    <p *ngFor="let issue of post.issues" class="bold">
       {{issue.label}}
     </p>
   </aside>
@@ -30,7 +30,7 @@
       <h1>{{ post.detail[0].header }}
         <!-- postdetail.header-->
       </h1>
-      <span [innerHTML]="post.detail[0].content"></span>
+      <span [innerHTML]="detail.content" *ngFor="let detail of post.detail"></span>
     </span>
 
     <div *ngIf="isPhotoMode">
@@ -44,7 +44,9 @@
   <div class="article-footer-container">
     <h2>About the Contributor</h2>
     <!-- postmodel.authors.details -->
-    <app-bio *ngFor="let author of authors" [bio]="author"></app-bio>
+    <app-bio *ngFor="let author of authors" [bio]="author">
+
+    </app-bio>
   </div>
 </div>
 

@@ -10,6 +10,6 @@ export class IssuesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
 
+  }
 }

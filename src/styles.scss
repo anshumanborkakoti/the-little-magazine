@@ -52,8 +52,22 @@ pre {
   }
 }
 a {
-  text-decoration-color: black;
+  color: $link-color;
+  text-decoration-color: $link-color;
+  text-decoration-line: none;
+  @include primary-italic-font;
   &:visited {
-    color: black;
+    color: $link-color;
+  }
+  &:hover {
+    color: $link-color-hover;
+    text-decoration-line: underline;
+  }
+}
+app-common-post-detail {
+  .article-footer-container {
+    .bio-content * {
+      font-size: 0.9em;
+    }
   }
 }

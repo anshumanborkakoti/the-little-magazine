@@ -57,9 +57,7 @@
 
 @mixin createHeaderStyles($numberOfHeaders: 4, $defaultFontSizeEm: 1) {
   $largest-font-size: (40px/16px); // Assuming largest body header to be 15px;
-  $decrement: (
-    (25/16) / $numberOfHeaders
-  ); //Assuming smallest header to be 18px, dividng the range
+  $decrement: ((25/16) / $numberOfHeaders); //Assuming smallest header to be 18px, dividng the range
   @for $i from 1 through $numberOfHeaders {
     .h#{$i} {
       font-size: #{#{$largest-font-size}em};
@@ -76,12 +74,12 @@
   overflow-y: auto;
 }
 
-@mixin tiles-container($max-column-size: 350px, $max-row-size: 300px) {
+@mixin tiles-container($max-column-size: 350px, $max-row-size: 300px, $min-column-size: auto, $min-row-size: auto) {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(auto, $max-column-size));
-  grid-template-rows: repeat(auto-fit, minmax(auto, $max-row-size));
-  grid-auto-rows: minmax(auto, $max-row-size);
-  grid-auto-columns: minmax(auto, $max-column-size);
+  grid-template-columns: repeat(auto-fit, minmax($min-column-size, $max-column-size));
+  grid-template-rows: repeat(auto-fit, minmax($min-row-size, $max-row-size));
+  grid-auto-rows: minmax($min-row-size, $max-row-size);
+  grid-auto-columns: minmax($min-column-size, $max-column-size);
   justify-content: space-evenly;
   align-content: space-evenly;
   grid-gap: 20px;
@@ -94,12 +92,6 @@
 }
 
 @mixin tiles-common-styling {
-  @include larger-screen {
-    box-shadow: 5px 5px 10px darken(rgba-secondary-2(0.7), 10%);
-  }
-  @include medium-screen {
-    box-shadow: 5px 5px 10px darken(rgba-secondary-2(0.7), 10%);
-  }
-  background-color: lighten($color-secondary, 25%);
-  border: 2px solid darken($color-primary, 5%);
+  border-top: 1px solid darken(rgba-secondary-2(0.7), 10%);
+  padding: 10px;
 }

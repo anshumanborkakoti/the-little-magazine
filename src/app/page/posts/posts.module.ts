@@ -14,15 +14,15 @@ const routes: Route[] = [
     pathMatch: 'full'
   },
   {
-    path: 'Poetry/:postid',
+    path: 'poems/:postid',
     component: PoetryDetailComponent
   },
   {
-    path: 'Essays/:postid',
+    path: 'essays/:postid',
     component: EssayDetailComponent
   },
   {
-    path: 'Photographs/:postid',
+    path: 'photoessays/:postid',
     component: PhotographyDetailComponent
   }
 ];

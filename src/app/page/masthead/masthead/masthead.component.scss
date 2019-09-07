@@ -1,12 +1,13 @@
 @import '../../../../assets/sass/partials/utils';
 @import '../../../../assets/sass/partials/theme-default';
 @import '../../../../assets/sass/partials/breakpoints';
+
 .masthead-container {
   @media only screen and (min-width: 750px) {
     @include tiles-container(95vw, 30vh);
   }
 
   @media only screen and (max-width: 750px) {
-    @include tiles-container(95vw, 50vh);
+    @include tiles-container(95vw, auto, auto, 50vh);
   }
 }
