@@ -36,6 +36,11 @@ export class PostsService {
   }
 
   getPostsByIssue(aIssueId: string): Post[] {
-    return [];
+    return All_Posts.filter(aPost => {
+      const issue = aPost.issues.find(aIssue => {
+        return aIssue.id === aIssueId;
+      });
+      return !!issue;
+    });
   }
 }

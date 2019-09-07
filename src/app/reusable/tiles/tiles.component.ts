@@ -7,11 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TilesComponent implements OnInit {
   @Input() headerImagePath;
+  @Input() imageCaption;
   @Input() header;
   @Input() bodyContent;
   @Input() footerContent;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

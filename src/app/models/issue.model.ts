@@ -16,7 +16,9 @@ export class Issue implements Tag<Issue> {
       this.label,
       cloneCmsClass(this.thumbnail),
       this.published,
-      this.archived
+      this.archived,
+      this.pdf,
+      this.latest
     );
   }
   constructor(
@@ -26,7 +28,8 @@ export class Issue implements Tag<Issue> {
     public thumbnail: Thumbnail = null,
     public published: boolean = false,
     public archived: boolean = false,
-    public pdf: string = null
+    public pdf: string = null,
+    public latest: boolean = false
   ) {
 
   }

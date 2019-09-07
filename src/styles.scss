@@ -71,3 +71,21 @@ app-common-post-detail {
     }
   }
 }
+
+.hr {
+  width: 100%;
+  border: 1px solid $color-secondary-2;
+  margin: 5px 0;
+}
+
+em {
+  @include primary-italic-font;
+}
+
+ol {
+  list-style: decimal;
+  margin-left: 1em;
+  li {
+    padding: 10px;
+  }
+}

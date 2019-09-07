@@ -7,10 +7,17 @@ article {
   cursor: pointer;
   display: inline-grid;
   grid-template-rows:
-    [image-header-start] 1fr [image-header-end header-start]
-    min-content [header-end content-start]
-    min-content [content-end footer-start]
-    min-content [footer-end];
+    [image-header-start]
+    1fr
+    [image-header-end caption-start]
+    min-content
+    [caption-end header-start]
+    min-content
+    [header-end content-start]
+    min-content
+    [content-end footer-start]
+    min-content
+    [footer-end];
   row-gap: 0.5em;
   grid-template-columns: auto;
   border-radius: 10px;
@@ -28,6 +35,10 @@ article {
     width: 100%;
     height: 100%;
     border-radius: 10px 10px 0 0;
+  }
+  .article-caption {
+    grid-row: caption-start/caption-end;
+    @include image-caption;
   }
   .article-header {
     grid-row: header-start/header-end;

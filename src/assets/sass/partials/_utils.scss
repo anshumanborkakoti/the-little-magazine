@@ -95,3 +95,10 @@
   border-top: 1px solid darken(rgba-secondary-2(0.7), 10%);
   padding: 10px;
 }
+
+@mixin image-caption {
+  padding-right: 5px;
+  justify-self: end;
+  @include primary-italic-font;
+  font-size: 0.5rem;
+}

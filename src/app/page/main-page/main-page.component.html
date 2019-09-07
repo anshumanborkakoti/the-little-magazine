@@ -1,53 +1,24 @@
 <div class="main-content">
-  <!-- <img
-    class="mainImage"
-    [srcset]="srcset"
-    sizes="(max-width:800px) 95vw,
-    (min-width:800px and max-width:1800px) 100vw,
-     100vw"
-    src="../../../assets/img/DSCF0907_large.jpg"
-    alt="Typewriter"
-  /> -->
-  <img
-    class="mainImage"
-    [clSrc]="mainImageSource"
-    fetch-format="auto"
-    quality="auto"
-    dpr="auto"
-    width="auto"
-    responsive
-    type="fetch"
-  />
-  <!-- <cl-image
-    public-id="tljnesandbox/Typewriter_main_page"
-    dpr="auto"
-    responsive
-    width="auto"
-    crop="fit"
-  >
-    <cl-transformation fetch-format="auto" quality="auto"> </cl-transformation>
-  </cl-image> -->
+  <img class="mainImage" [clSrc]="mainImageSource" fetch-format="auto" quality="auto" dpr="auto" width="auto" responsive
+    type="fetch" />
   <div class="imageOverlay">
     <div class="overlayText">
       A journal featuring elegant art and literary content from northeast India.
     </div>
   </div>
   <article class="articles">
-    <div class="notice article-heading">
+    <!-- <div class="notice article-heading">
       Accepting submissions for Edition 1 now! Go to
       <a [routerLink]="'/guidelines'">Guidelines</a> and
       <a [routerLink]="'/submissions'">Process</a>
-    </div>
-    <!-- <span class="article-heading">The Latest</span>
-    <div class="comingsoon"></div> -->
-    <!-- <ul class="article-list">
-      <li class="article">
-        Cras justo odio
+    </div> -->
+    <span class="article-heading">The Latest</span>
+    <ul class="article-list">
+      <li class="article" *ngFor="let post of postList">
+        <a routerLink="/categories/posts/{{post.category.name | lowercase}}/{{post.id}}">
+          {{post.label}} by {{post.authors[0].name}}
+        </a>
       </li>
-      <li class="article">Dapibus ac facilisis in</li>
-      <li class="article">Morbi leo risus</li>
-      <li class="article">Porta ac consectetur ac</li>
-      <li class="article">Vestibulum at eros</li>
-    </ul> -->
+    </ul>
   </article>
 </div>

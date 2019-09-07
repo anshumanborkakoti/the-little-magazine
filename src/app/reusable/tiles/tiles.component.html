@@ -3,6 +3,7 @@
     <img [clSrc]="headerImagePath" fetch-format="auto" quality="auto" dpr="auto" width="auto" responsive type="fetch"
       class="article-header-image" crop="fill" />
   </div>
+  <div class="article-caption">{{ imageCaption|photoCredit }}</div>
 
   <div class="article-header">{{ header }}</div>
   <div class="article-content" [innerHTML]="bodyContent">

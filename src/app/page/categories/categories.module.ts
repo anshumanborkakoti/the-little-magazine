@@ -8,8 +8,7 @@ import { ReusableComponentsModule } from 'src/app/reusable/reusable-components.m
 const routes: Route[] = [
   {
     path: '',
-    component: CategoriesListComponent,
-    pathMatch: 'full'
+    component: CategoriesListComponent
   },
   {
     path: 'posts',

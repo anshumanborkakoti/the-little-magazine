@@ -3,6 +3,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Post } from 'src/app/models/post.model';
 import { PostsService } from '../posts.service';
 import { Subscription } from 'rxjs';
+import { ImageService } from 'src/app/image.service';
 
 @Component({
   selector: 'app-post-list',
@@ -14,7 +15,11 @@ export class PostListComponent implements OnInit, OnDestroy {
   posts: Post[] = [];
   private querySubscription: Subscription;
 
-  constructor(private acRoute: ActivatedRoute, private postsService: PostsService) { }
+  constructor(
+    private acRoute: ActivatedRoute,
+    private postsService: PostsService,
+    protected imageService: ImageService
+  ) { }
 
   ngOnInit() {
     this._fetchPosts(this.acRoute.snapshot.queryParamMap);

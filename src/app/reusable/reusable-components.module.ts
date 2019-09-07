@@ -7,6 +7,7 @@ import { CommonPostDetailComponent } from './common-post-detail/common-post-deta
 import { BioComponent } from './bio/bio.component';
 import { PhotoTilesComponent } from './photo-tiles/photo-tiles.component';
 import { RemoveSpaces } from './remove-space.pipe';
+import { PhotoCreditPipe } from './photo-credit.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { RemoveSpaces } from './remove-space.pipe';
     CommonPostDetailComponent,
     BioComponent,
     PhotoTilesComponent,
-    RemoveSpaces
+    RemoveSpaces,
+    PhotoCreditPipe
   ],
   imports: [CommonModule, FormsModule, CloudinaryModule],
   exports: [

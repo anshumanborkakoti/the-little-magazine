@@ -15,4 +15,8 @@ export class ImageService {
   getImage(name: string): string {
     return this.cloudinary.cloudinaryInstance.url(`${this.imageUrlPrefix}/${name}`, { secure: true });
   }
+
+  getUnprefixedImage(name: string): string {
+    return this.cloudinary.cloudinaryInstance.url(`${name}`, { secure: true });
+  }
 }

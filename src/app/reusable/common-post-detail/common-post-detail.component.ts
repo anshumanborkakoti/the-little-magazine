@@ -4,6 +4,7 @@ import { BioModel } from '../bio/bio.model';
 import { DETAIL_COMPONENT_MODES } from 'src/app/common/util/constants';
 import { PostsService } from 'src/app/page/posts/posts.service';
 import { ActivatedRoute } from '@angular/router';
+import { ImageService } from 'src/app/image.service';
 
 @Component({
   selector: 'app-common-post-detail',
@@ -18,7 +19,11 @@ export class CommonPostDetailComponent implements OnInit {
   authors: BioModel[];
   isPhotoMode: boolean;
 
-  constructor(private postService: PostsService, private acRoute: ActivatedRoute) { }
+  constructor(
+    private postService: PostsService,
+    private acRoute: ActivatedRoute,
+    private imageService: ImageService
+  ) { }
 
 
   ngOnInit() {
@@ -27,6 +32,8 @@ export class CommonPostDetailComponent implements OnInit {
     this.authors = this.post.authors.map(author => {
       const name = author.name;
       const thumbnail = author.details.clone();
+      // TODO Remove when CMS comes in as secureUrl will be stored anyway
+      thumbnail.image.secureUrl = this.imageService.getUnprefixedImage(thumbnail.image.publicId);
       const bio = new BioModel(name, thumbnail);
       return bio;
     });

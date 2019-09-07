@@ -45,12 +45,14 @@
     grid-template-rows: [image-area-start] 50% [image-area-end content-area-start] 50% [content-area-end];
     grid-template-columns: [column-start] 90% [column-end];
     row-gap: 10px;
-    justify-content: center;
+    justify-content: space-evenly;
+    justify-items: center;
     @include tiles-common-styling;
 
     .bio-image {
       grid-row: image-area-start/image-area-end;
       justify-self: center;
+      padding: 0 20%;
       .bioImage {
         max-height: 100%;
       }

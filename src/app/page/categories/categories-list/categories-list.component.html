@@ -1,6 +1,7 @@
 <!-- <div class="comingsoon"></div> -->
 <div class="categories">
   <app-tiles *ngFor="let category of categories" [bodyContent]="category.thumbnail.content"
-    [headerImagePath]="category.thumbnail.image.secureUrl" [footerContent]="category.thumbnail.footer"
-    [header]="category.thumbnail.header" (click)="onCategorySelected(category.id)"></app-tiles>
+    [headerImagePath]="imageService.getUnprefixedImage(category.thumbnail.image.publicId)"
+    [footerContent]="category.thumbnail.footer" [header]="category.thumbnail.header"
+    [imageCaption]="category.thumbnail.caption" (click)="onCategorySelected(category.id)"></app-tiles>
 </div>

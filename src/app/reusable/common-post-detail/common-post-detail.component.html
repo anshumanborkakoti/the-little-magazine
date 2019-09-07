@@ -6,6 +6,7 @@
       <cl-transformation fetch-format="auto" type="fetch" quality="auto" dpr="auto"></cl-transformation>
     </cl-image>
   </div>
+  <span class="article-header-image-caption">{{ post.detail[0].caption | photoCredit }}</span>
 
 
   <aside class="contributor-detail">
@@ -27,10 +28,13 @@
   </aside>
   <article class="article-content">
     <span *ngIf="!isPhotoMode">
-      <h1>{{ post.detail[0].header }}
-        <!-- postdetail.header-->
-      </h1>
-      <span [innerHTML]="detail.content" *ngFor="let detail of post.detail"></span>
+      <ng-container *ngFor="let detail of post.detail;let i=index">
+        <h1>{{ detail.header }}
+          <!-- postdetail.header-->
+        </h1>
+        <span [innerHTML]="detail.content"></span>
+        <div *ngIf="(post.detail.length > 1 && i < post.detail.length - 1)" class="separator"></div>
+      </ng-container>
     </span>
 
     <div *ngIf="isPhotoMode">
