@@ -403,10 +403,92 @@ export const Post_Faraway_World: Post = new Post(
   `<p>The Photo Essay &ldquo;A Faraway World&rdquo; explores the Ze Mnui village in Manipur where the Zeme tribe resides. </p>`,
 );
 
+export const Post_Mayurim = new Post(
+  [
+    new Author(
+      'Mayurim Das Bayan',
+      '',
+      '',
+      'A6i7ZMJl9dD3VZqRe0HJpCJGiZdEp7khmuYAqKvd872hYDEpAz',
+      '',
+      '',
+      [],
+      new Thumbnail(
+        'M7HyHugdFtTwS7dtb2iL3e9phma9dmbJIHYj5vDFZZ3DWwMj4X',
+        new Image(
+          `${DELIVERY_PREFIX}/Authors/Mayurim_Das_Bayan`,
+          'jpg'
+        ),
+        'Mayurim Das Bayan',
+        `<p>Mayurim Das Bayan&rsquo;s photographs have been recognized and showcased at photography events such as the National Photography Exhibition &lsquo;Pohor.&rsquo; With a master&rsquo;s degree in Mass Communication and Journalism, Mayurim has worked as a producer at a production house and as a project officer on a Tiger conservation project at Manas National Park. Apart from photography, she shares a passion for books, cinema, and traveling. </p>`
+      )
+    )
+  ],
+  [],
+  false,
+  new Thumbnail(
+    'k0OsbhN8hovFxg4r73vyWW02cPKBnp5xkRDUf3AwRSC5z35lfm',
+    new Image(
+      `${DELIVERY_PREFIX}/Posts/PhotoEssays/Mayurim_Das_Bayan/1`,
+      'jpg'
+    ),
+    'Mayurim Das Bayan',
+    'Mayurim Das Bayan',
+    '',
+    'Fables of the Earth'
+  ),
+  [
+    new PostDetail(
+      'jKidSiKPfMNUa156PHmz0ULBvtRJzwYI4iwAAIP1M4u4lRm8Jf',
+      new Image(
+        `${DELIVERY_PREFIX}/Posts/PhotoEssays/Mayurim_Das_Bayan/1`,
+        'jpg'
+      ),
+      '',
+      `<p>Only women in the Hira community are tasked with shaping the pots. The knowledge and artisanship of shaping pots is considered a guarded secret that&rsquo;s passed down ancestrally from a mother to a daughter or daughter-in-law.</p>`
+    ),
+    new PostDetail(
+      'PFaQCIIYdHXSZL1J1SSW2ORTDwajm9wqgt0Jlofp0Ikyk72PYw',
+      new Image(
+        `${DELIVERY_PREFIX}/Posts/PhotoEssays/Mayurim_Das_Bayan/2`,
+        'jpg'
+      ),
+      '',
+      `<p>The pottery produced by the community is entirely handmade and as many as 150 earthen lamps can be made in a day.</p>`
+    ),
+    new PostDetail(
+      'SI9EfXGjnsGm7QLMtWu6W1woBbwrUP4hzRoYNJqiApD5PmeTjf',
+      new Image(
+        `${DELIVERY_PREFIX}/Posts/PhotoEssays/Mayurim_Das_Bayan/3`,
+        'jpg'
+      ),
+      '',
+      `<p>The Hira community practices division of labor on the basis of gender, age, and skills of the potters. The women shape the pots, while the men perform tasks such as collecting the rare molding mud, the sticky <em>Hiramati,</em> baking the products after getting them sundried, and transporting products to the market.</p>`
+    ),
+    new PostDetail(
+      'd4JLxpQ6BQyqfLXauvfFeLCCs8d2S5ousilGJgoOzOakpiNgIG',
+      new Image(
+        `${DELIVERY_PREFIX}/Posts/PhotoEssays/Mayurim_Das_Bayan/4`,
+        'jpg'
+      ),
+      '',
+      `<p>Pottery products undergo seven long phases out of which the last phase involves creating a furnace with indigenous materials such as hay and aquatic algae to burn the earthen products and prepare them for the market.</p>`
+    )
+  ],
+  true,
+  Category_Photographs,
+  Issues,
+  'Fables of the Earth',
+  'g934ZwmnFYYIETEMLpeUu8S74ryZc3SD3LWMqbYPVNYWKQx6h4',
+  null,
+  `<p>The photo essay &ldquo;Fables of the Earth&rdquo; showcases the Hira potters&rsquo; community in Assam&rsquo;s Barpeta district. For the Hira community, pottery is not just an occupation, but a sense of identity and collective artistry passed down since (what&rsquo;s believed to be) 600 BC.</p>`
+)
+
 export const All_Posts: Post[] = [
   Post_insurgent,
   Post_Bruce,
   Post_Julie_Kagti,
   Post_Paloma,
-  Post_Faraway_World
+  Post_Faraway_World,
+  Post_Mayurim
 ];

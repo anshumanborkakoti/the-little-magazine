@@ -1,9 +1,5 @@
 <div class="header">
-  <img
-    class="header-menu-list"
-    src="../../assets/img/icons/_ionicons_svg_md-list.svg"
-    (click)="openModal()"
-  />
+  <img class="header-menu-list" src="../../assets/img/icons/_ionicons_svg_md-list.svg" (click)="openModal()" />
   <ul class="header-nav">
     <li *ngFor="let header of headers">
       <a href="#" [routerLink]="header.route" routerLinkActive="link-active">{{
@@ -14,51 +10,39 @@
   <div class="socialIcons">
     <ul>
       <li>
-        <a
-          href="https://www.facebook.com/thelittlejournalofneindia/"
-          target="_blank"
-        >
-          <img
-            src="../../assets/img/icons/_ionicons_svg_logo-facebook.svg"
-            alt="Facebook"
-          />
+        <a href="https://www.facebook.com/thelittlejournalofneindia/" target="_blank">
+          <img src="../../assets/img/icons/_ionicons_svg_logo-facebook.svg" alt="Facebook" />
         </a>
       </li>
       <li>
         <a href="https://twitter.com/TNeindia" target="_blank">
-          <img
-            src="../../assets/img/icons/_ionicons_svg_logo-twitter.svg"
-            alt="Twitter"
-          />
+          <img src="../../assets/img/icons/_ionicons_svg_logo-twitter.svg" alt="Twitter" />
         </a>
       </li>
 
       <li>
         <a href="https://www.pinterest.com/little5114" target="_blank">
-          <img
-            src="../../assets/img/icons/_ionicons_svg_logo-pinterest.svg"
-            alt="Pinterest"
-          />
+          <img src="../../assets/img/icons/_ionicons_svg_logo-pinterest.svg" alt="Pinterest" />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/thelittlejournal.neindia/" target="_blank">
+          <img src="../../assets/img/icons/_ionicons_svg_logo-instagram.svg" alt="Instagram" />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.tumblr.com/blog/thelittlejournalofnortheastindia" target="_blank">
+          <img src="../../assets/img/icons/_ionicons_svg_logo-tumblr.svg" alt="Tumblr" />
         </a>
       </li>
     </ul>
   </div>
   <div class="modal-dialog" *ngIf="!hideModal">
     <div class="modal-content">
-      <img
-        class="modal-close"
-        src="../../assets/img/icons/_ionicons_svg_md-close.svg"
-        (click)="closeModal()"
-      />
+      <img class="modal-close" src="../../assets/img/icons/_ionicons_svg_md-close.svg" (click)="closeModal()" />
       <ul class="header-nav-modal">
         <li *ngFor="let h of headers">
-          <a
-            href="#"
-            [routerLink]="h.route"
-            routerLinkActive="link-active"
-            (click)="closeModal()"
-            >{{ h.label }}</a
-          >
+          <a href="#" [routerLink]="h.route" routerLinkActive="link-active" (click)="closeModal()">{{ h.label }}</a>
         </li>
       </ul>
     </div>

@@ -6,9 +6,10 @@
       <cl-transformation fetch-format="auto" type="fetch" quality="auto" dpr="auto"></cl-transformation>
     </cl-image>
   </div>
-  <span
-    class="article-header-image-caption">{{ (isPhotoMode? post.authors[0].name :post.detail[0].caption) | photoCredit }}</span>
-
+  <span class="article-header-image-caption">
+    {{ (isPhotoMode? post.authors[0].name :post.detail[0].caption) | photoCredit }}
+  </span>
+  <div class="post-detail-description" [innerHTML]="post.postDescription"></div>
 
   <aside class="contributor-detail">
     <p>

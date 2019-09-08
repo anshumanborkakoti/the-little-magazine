@@ -13,11 +13,12 @@ h1 {
   .detail-container {
     display: grid;
     grid-template-columns: 95vw;
-    grid-template-rows: 30vh min-content min-content 1fr min-content;
+    grid-template-rows: 30vh min-content min-content min-content 1fr min-content;
     grid-template-areas:
       'header-image'
       'caption'
       'aside'
+      'description'
       'article'
       'article-footer';
     column-gap: 20px;
@@ -30,6 +31,10 @@ h1 {
     .article-header-image-caption {
       grid-area: caption;
       @include image-caption;
+    }
+    .post-detail-description {
+      grid-area: description;
+      @include primary-italic-font;
     }
 
     .contributor-detail {
@@ -48,7 +53,7 @@ h1 {
       justify-self: start;
       white-space: pre-line;
       .photo-container {
-        @include tiles-container(auto, auto, 350px, 300px);
+        @include tiles-container(95vw, auto, auto, 300px);
       }
     }
     .article-footer-container {
@@ -61,10 +66,11 @@ h1 {
   .detail-container {
     display: grid;
     grid-template-columns: 20% 1fr;
-    grid-template-rows: 30vh 1fr min-content;
+    grid-template-rows: 30vh min-content min-content 1fr min-content;
     grid-template-areas:
       'header-image header-image'
       '. caption'
+      'aside description'
       'aside article'
       'article-footer article-footer';
     column-gap: 20px;
@@ -78,6 +84,11 @@ h1 {
     .article-header-image-caption {
       grid-area: caption;
       @include image-caption;
+    }
+
+    .post-detail-description {
+      grid-area: description;
+      @include primary-italic-font;
     }
 
     .contributor-detail {
@@ -95,7 +106,8 @@ h1 {
       grid-area: article;
       justify-self: start;
       .photo-container {
-        @include tiles-container(auto, auto, 350px, 300px);
+        //@include tiles-container(auto, auto, 350px, 300px);
+        @include tiles-container(95vw, auto, auto, 300px);
       }
     }
     .article-footer-container {
