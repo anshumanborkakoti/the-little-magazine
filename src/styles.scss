@@ -72,6 +72,14 @@ app-common-post-detail {
   }
 }
 
+app-photo-tiles {
+  .photo-description {
+    * {
+      font-size: 0.9em;
+    }
+  }
+}
+
 .hr {
   width: 100%;
   border: 1px solid $color-secondary-2;

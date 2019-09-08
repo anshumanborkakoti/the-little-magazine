@@ -1,34 +1,43 @@
-import { Category } from "src/app/models/category.model";
-import { makeid } from "src/app/common/util/utils";
-import { Thumbnail } from "src/app/models/thumbnail.model";
-import { Image } from "src/app/models/image.model";
-import { Post } from "src/app/models/post.model";
-import { Author } from "src/app/models/author.model";
-import { PostDetail } from "src/app/models/post-detail.model";
-import { Issue } from "src/app/models/issue.model";
-import { environment } from "src/environments/environment";
+import { Category } from 'src/app/models/category.model';
+import { Thumbnail } from 'src/app/models/thumbnail.model';
+import { Image } from 'src/app/models/image.model';
+import { Post } from 'src/app/models/post.model';
+import { Author } from 'src/app/models/author.model';
+import { PostDetail } from 'src/app/models/post-detail.model';
+import { Issue } from 'src/app/models/issue.model';
+import { environment } from 'src/environments/environment';
 
 const DELIVERY_PREFIX = environment.cloudinary_deliveryUrl_prefix;
 
 export const Issues = [
   new Issue(
     'September 2019',
-    makeid(20),
+    'WO6d5m7D7zRJhtMAKlbO5qeZylFTFIK83pbt0ANEYG3YQktqqU',
     'September 2019',
-    new Thumbnail(),
+    new Thumbnail(
+      'zd6nfkXE6773VIvVVTQ7iX0xpRktsxsVH8yuuxieYbICoPhPdn',
+      new Image(
+        `${DELIVERY_PREFIX}/Issues/September_2019`,
+        'jpg'
+      ),
+      'Juan Sinni',
+      '',
+      '',
+      'September 2019'
+    ),
     true,
     false,
-    '',
+    '../../../assets/test.pdf',
     true
   )
 ];
 
 export const Category_Essays = new Category(
   'Essays',
-  makeid(20),
+  'GR4L98FSWER7k1atlkkWbd2E6lAG00zpcFGpV6BLyXT0V1Eq5U',
   'Essays',
   new Thumbnail(
-    makeid(20),
+    '48HaYaoxa6rijjnjT3jCObJFW9c72ZF3LtYvLppLppdxcxPNt3',
     new Image(
       `${DELIVERY_PREFIX}/Categories/Essays_Folder_Eugenio_Mazzone_eugi1492_xmv6yu`,
       'jpg',
@@ -43,10 +52,10 @@ export const Category_Essays = new Category(
 
 export const Category_Photographs = new Category(
   'Photo Essays',
-  makeid(20),
+  'uixKbVkSJVzS0i8AnXDxtLOMoIajFDnEkh7Zf9Rj0LMPyzLzI9',
   'Photo Essays',
   new Thumbnail(
-    makeid(20),
+    'Y5L8BeKCRwdWORR9FlxKMUws8PfTeFWbAIEwOj15K2WNWqwGmG',
     new Image(
       `${DELIVERY_PREFIX}/Categories/Photographs_Folder_Vanveen_JF_vanveenjf_dwcze7`,
       'jpg',
@@ -61,10 +70,10 @@ export const Category_Photographs = new Category(
 
 export const Category_Poems = new Category(
   'Poems',
-  makeid(20),
+  'QMDAEr8ABSjorX6wXJMenWnWe21jcdr8m9jAO77zWAu14lsYXt',
   'Poems',
   new Thumbnail(
-    makeid(20),
+    'jLu7HvDsX4YTwJCgm9attuYYB3licVKatE5CYC670es5EIYLCf',
     new Image(
       `${DELIVERY_PREFIX}/Categories/Poems_Folder_Liana_Mikah_wbkfji`,
       'jpg',
@@ -85,12 +94,12 @@ export const Post_insurgent = new Post(
       'Andrew Kai Hangsing',
       'andrewkaihaising',
       'default123',
-      makeid(20),
+      'oxtbLwW5ObrOfl5T9Kh67bNi88vTJiZQXy6oN4DHhbt6dArcmY',
       '',
       '',
       [],
       new Thumbnail(
-        makeid(20),
+        'FIohGashhAI93ev0JcO6knCwbLBkP51zyP86i3VF8kDgBgVF31',
         new Image(
           `${DELIVERY_PREFIX}/Authors/Andrew_Kai_Hangsing`,
           'jpg',
@@ -104,7 +113,7 @@ export const Post_insurgent = new Post(
   [],
   false,
   new Thumbnail(
-    makeid(20),
+    'HVCU2GEeN1FMWeD0ddWmfWRZzAo4tqFsBCtBCWu1YVW08lWHPC',
     new Image(
       `${DELIVERY_PREFIX}/Posts/Insurgent_JR_Korpa_ddyi1g`,
       'jpg',
@@ -117,7 +126,7 @@ export const Post_insurgent = new Post(
   ),
   [
     new PostDetail(
-      makeid(20),
+      'Iw8t6olmWQR3jAyOQ809Ehy72BbmuzdjKbVgwVsAFPIK0Xn85M',
       new Image(
         `${DELIVERY_PREFIX}/Posts/Insurgent_Emile_Seguin_CA_da0bvh`,
         'jpg',
@@ -133,7 +142,7 @@ export const Post_insurgent = new Post(
   Category_Poems,
   Issues,
   'The Insurgent',
-  makeid(20),
+  'YgPNeyQC9zcK6w9Ffw1RGbyql6RV3VF0eZzkSkgSqBocPL8F3x',
   null
 );
 
@@ -143,12 +152,12 @@ export const Post_Bruce = new Post(
       'Bruce McRae',
       '',
       '',
-      makeid(20),
+      '6HFX4OpY0uKkCRA3UMJfe92DFx38Z9c1NUBphXA1QPtK9ME5r3',
       '',
       '',
       [],
       new Thumbnail(
-        makeid(20),
+        'Iw8t6olmWQR3jAyOQ809Ehy72BbmuzdjKbVgwVsAFPIK0Xn85M',
         new Image(
           `${DELIVERY_PREFIX}/Authors/Bruce_McRae`,
           'jpg'
@@ -161,7 +170,7 @@ export const Post_Bruce = new Post(
   [],
   false,
   new Thumbnail(
-    makeid(20),
+    'YgPNeyQC9zcK6w9Ffw1RGbyql6RV3VF0eZzkSkgSqBocPL8F3x',
     new Image(
       `${DELIVERY_PREFIX}/Posts/A_One_Two_Three_Travis_Yewell_r50vdh`,
       'jpg'
@@ -173,7 +182,7 @@ export const Post_Bruce = new Post(
   ),
   [
     new PostDetail(
-      makeid(20),
+      '6HFX4OpY0uKkCRA3UMJfe92DFx38Z9c1NUBphXA1QPtK9ME5r3',
       new Image(
         `${DELIVERY_PREFIX}/Posts/The_Day_I_Almost_Won_The_Lottery_Carl_Raw_2_dkjrgk`,
         'jpg'
@@ -184,7 +193,7 @@ export const Post_Bruce = new Post(
       'The Day I Almost Won The Lottery'
     ),
     new PostDetail(
-      makeid(20),
+      'w14yLnhV92SKj2Pz629mI8m2llOZG3MXUBKxitLyxdWLjPMKab',
       new Image(
         `${DELIVERY_PREFIX}/Posts/A_One_Two_Three_Travis_Yewell_r50vdh`,
         'jpg'
@@ -199,7 +208,7 @@ export const Post_Bruce = new Post(
   Category_Poems,
   Issues,
   'Two Poems',
-  makeid(20),
+  '6BoE01wfQbcW5JUFLqet7Xa4iKfhFgu5PSDrEjlHyJHTubCsCw',
   null
 );
 
@@ -209,12 +218,12 @@ export const Post_Julie_Kagti = new Post(
       'Jule Kagti',
       '',
       '',
-      makeid(20),
+      'eh6SsYiYavHnqYXiccaQgUChaIqeEonTNOJkbkTUbpg2f7R0YK',
       '',
       '',
       [],
       new Thumbnail(
-        makeid(20),
+        '603FJBpCGnKxlcsMFKPViSaaS2wTU7XSZA1mCMSQw04tvAufAG',
         new Image(
           `${DELIVERY_PREFIX}/Authors/Julie_Kagti`,
           'jpg'
@@ -227,7 +236,7 @@ export const Post_Julie_Kagti = new Post(
   [],
   false,
   new Thumbnail(
-    makeid(20),
+    'RcvntZoEY6bZf6xMGrxXedoYPaK43jIMCltFTkO9v6SZSfUK9H',
     new Image(
       `${DELIVERY_PREFIX}/Posts/Dear_Ziro_Louis_Harang_x69nmp`,
       'jpg'
@@ -239,7 +248,7 @@ export const Post_Julie_Kagti = new Post(
   ),
   [
     new PostDetail(
-      makeid(20),
+      'Bzb9XtF5Ke4njWEqtwxjFEjh5wfqZuGrvwBwn1TneHueyC6KG2',
       new Image(
         `${DELIVERY_PREFIX}/Posts/Dear_Ziro_Luca_Severin_s9mmro`,
         'jpg'
@@ -254,7 +263,7 @@ export const Post_Julie_Kagti = new Post(
   Category_Essays,
   Issues,
   'Dear Ziro',
-  makeid(20),
+  'JD3f2pylJxsWqFEiSsACMdlOsrjEDaOPyT49EcvZWgGdb1uIZj',
   null
 );
 
@@ -264,12 +273,12 @@ export const Post_Paloma = new Post(
       'Paloma Dutta',
       '',
       '',
-      makeid(20),
+      'AWFPoXD7y2HCqBqtlvy1OQT4fYNda8JmWNdq15DKugV5qaGRKd',
       '',
       '',
       [],
       new Thumbnail(
-        makeid(20),
+        'f4x6XMXaKfXKfU51Qaa32Yp3cS31Yi9FC8rHgo01ubDAuZHnsj',
         new Image(
           `${DELIVERY_PREFIX}/Authors/Paloma_Dutta`,
           'jpg'
@@ -282,7 +291,7 @@ export const Post_Paloma = new Post(
   [],
   false,
   new Thumbnail(
-    makeid(20),
+    'N4QTC0zwdXeosoNKA5YFW0VJELYcFe0wNoB2nDpeumiN2utc7W',
     new Image(
       `${DELIVERY_PREFIX}/Posts/Monsooned_in_Gangtok_Frantisek_Duris_e4wlg8`,
       'jpg'
@@ -294,7 +303,7 @@ export const Post_Paloma = new Post(
   ),
   [
     new PostDetail(
-      makeid(20),
+      'JGVMUN6ncub2pa0Bbsg5VLarIHCIO6CAavGyvbg2PqeCX2CAOO',
       new Image(
         `${DELIVERY_PREFIX}/Posts/Monsooned_in_Gangtok_Alvaro_SF_jx0x32`,
         'jpg'
@@ -309,13 +318,95 @@ export const Post_Paloma = new Post(
   Category_Essays,
   Issues,
   'Monsooned in Gangtok',
-  makeid(20),
+  'Idw5cmmZuMokBMvdwmIa9N6JMkP18Ua54KL7lnPY9oeaUY6A82',
   null
-)
+);
+
+export const Post_Faraway_World: Post = new Post(
+  [
+    new Author(
+      'Asangle Disong',
+      '',
+      '',
+      'lwwo6fN7APinQFPNzMupBEYn0jbQlWrYYPzx7Y2vAeDdJBGgj6',
+      '',
+      '',
+      [],
+      new Thumbnail(
+        'V475KBT8ivbK5qjXCkPJwyZJVDd1wHQ03aH3yFOfDQyQOlQZgM',
+        new Image(
+          `${DELIVERY_PREFIX}/Authors/Asangle_Disong`,
+          'jpg'
+        ),
+        'Asangle Disong',
+        `<p>Asangle Disong is a freelance writer with a passion for photography. In the past, Asangle&rsquo;s worked in the rural development sector, and now spends most her time traveling, writing, and exploring indigenous cultures and communities. &nbsp;</p>`
+      )
+    )
+  ],
+  [],
+  false,
+  new Thumbnail(
+    'uuvUpv3tKF3UVvDyX2x1h1W7xR2mWk9b6PE3UhAXPch1QdiSYI',
+    new Image(
+      `${DELIVERY_PREFIX}/Posts/PhotoEssays/Asangle_Disong/1`,
+      'jpg'
+    ),
+    'Asangle Disong',
+    'Asangle Disong',
+    '',
+    'A Faraway World'
+  ),
+  [
+    new PostDetail(
+      '0aMGGGdlfaNexIPNnWFg9b7MdDPnyS4lWDHj8T4BzgnhXoGZD1',
+      new Image(
+        `${DELIVERY_PREFIX}/Posts/PhotoEssays/Asangle_Disong/1`,
+        'jpg'
+      ),
+      '',
+      `<p>A <em>Morung</em> house, a typical house that in the olden days was used as a dormitory for boys to learn the skills they needed to know as a man such as hunting, craft making, and courting girls. </p>`
+    ),
+    new PostDetail(
+      'LM7zz0nmuRaxbTnCOGeqOLEKT9qVVjtlFgVNwaIdW79Aj79MGL',
+      new Image(
+        `${DELIVERY_PREFIX}/Posts/PhotoEssays/Asangle_Disong/2`,
+        'jpg'
+      ),
+      '',
+      `<p>A gateway to the Ze Mnui village. In the olden days, the Zeme tribe consisted of headhunters and to protect their village from enemies, they built fort-like walls with stones. To the villagers, the fort represents the strength and unity of the village.</p>`
+    ),
+    new PostDetail(
+      'U3LBtyeEbhkeoOTMX7yaEcZWABGGG93ATbPUlZab0XfhMbrKou',
+      new Image(
+        `${DELIVERY_PREFIX}/Posts/PhotoEssays/Asangle_Disong/3`,
+        'jpg'
+      ),
+      '',
+      `<p>Many of the huts in the village are built with thatched roofs and bamboo walls. Though the tribe depends on the forest for their needs, they believe in taking only what they absolutely need and living codependently with nature.</p>`
+    ),
+    new PostDetail(
+      'M7HyHugdFtTwS7dtb2iL3e9phma9dmbJIHYj5vDFZZ3DWwMj4X',
+      new Image(
+        `${DELIVERY_PREFIX}/Posts/PhotoEssays/Asangle_Disong/4`,
+        'png'
+      ),
+      ``,
+      `<p>A bird&rsquo;s eye view of the Ze Mnui village perched on a steep hill.</p>`
+    )
+  ],
+  true,
+  Category_Photographs,
+  Issues,
+  'A Faraway World',
+  'k0OsbhN8hovFxg4r73vyWW02cPKBnp5xkRDUf3AwRSC5z35lfm',
+  null,
+  `<p>The Photo Essay &ldquo;A Faraway World&rdquo; explores the Ze Mnui village in Manipur where the Zeme tribe resides. </p>`,
+);
 
 export const All_Posts: Post[] = [
   Post_insurgent,
   Post_Bruce,
   Post_Julie_Kagti,
-  Post_Paloma
+  Post_Paloma,
+  Post_Faraway_World
 ];

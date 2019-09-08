@@ -15,7 +15,7 @@
     <span class="article-heading">The Latest</span>
     <ul class="article-list">
       <li class="article" *ngFor="let post of postList">
-        <a routerLink="/categories/posts/{{post.category.name | lowercase}}/{{post.id}}">
+        <a routerLink="/categories/posts/{{post.category.name | removespaces| lowercase}}/{{post.id}}">
           {{post.label}} by {{post.authors[0].name}}
         </a>
       </li>

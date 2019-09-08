@@ -17,7 +17,7 @@ export class Issue implements Tag<Issue> {
       cloneCmsClass(this.thumbnail),
       this.published,
       this.archived,
-      this.pdf,
+      this.pdfUrl,
       this.latest
     );
   }
@@ -28,7 +28,7 @@ export class Issue implements Tag<Issue> {
     public thumbnail: Thumbnail = null,
     public published: boolean = false,
     public archived: boolean = false,
-    public pdf: string = null,
+    public pdfUrl: string = null,
     public latest: boolean = false
   ) {
 

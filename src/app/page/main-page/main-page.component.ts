@@ -19,11 +19,11 @@ export class MainPageComponent implements OnInit {
   constructor(private imageService: ImageService, private postService: PostsService) { }
 
   ngOnInit() {
-    this.mainImageSource = this.imageService.getImage('main_2');
     // TODO remove after mock is removed
     const latestIssue = Issues.find(aIssue => {
       return aIssue.latest;
-    })
+    });
+    this.mainImageSource = this.imageService.getUnprefixedImage(latestIssue.thumbnail.image.publicId);
     this.postList = this.postService.getPostsByIssue(latestIssue.id);
   }
 }

@@ -4,9 +4,16 @@
 
 article {
   max-height: 100%;
-  cursor: pointer;
+  cursor: default;
   display: inline-grid;
-  grid-template-rows: [photo-start] 1fr [photo-end caption-start] min-content [caption-end];
+  grid-template-rows:
+    [photo-start]
+    1fr
+    [photo-end caption-start]
+    min-content
+    [caption-end description-start]
+    min-content
+    [description-end];
   row-gap: 0.5em;
   grid-template-columns: auto;
   border-radius: 10px;
@@ -28,5 +35,10 @@ article {
     font-size: 0.75em;
     overflow-y: auto;
     padding: 0.5em;
+  }
+  .photo-description {
+    grid-row: description-start/description-end;
+    font-size: 1rem;
+    padding: 0 0.8em;
   }
 }

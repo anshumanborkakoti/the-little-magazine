@@ -7,6 +7,7 @@ import { ContactusComponent } from 'src/app/page/contactus/contactus.component';
 import { IssuesComponent } from 'src/app/page/issues/issues.component';
 import { MastheadComponent } from 'src/app/page/masthead/masthead/masthead.component';
 import { GuidelinesComponent } from 'src/app/page/guidelines/guidelines.component';
+import { IssueDetailComponent } from 'src/app/page/issues/issue-detail.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'issues',
     component: IssuesComponent
+  },
+  {
+    path: 'issues/detail/:issueid',
+    component: IssueDetailComponent
   },
   {
     path: 'masthead',

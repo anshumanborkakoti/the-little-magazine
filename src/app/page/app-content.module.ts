@@ -10,6 +10,7 @@ import { GuidelinesComponent } from './guidelines/guidelines.component';
 import { MainRoutesRoutingModule } from '../routes/main-routes/main-routes-routing.module';
 import { CloudinaryModule } from '@cloudinary/angular-5.x';
 import { ReusableComponentsModule } from '../reusable/reusable-components.module';
+import { IssueDetailComponent } from './issues/issue-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ReusableComponentsModule } from '../reusable/reusable-components.module
     ContactusComponent,
     IssuesComponent,
     MastheadComponent,
-    GuidelinesComponent
+    GuidelinesComponent,
+    IssueDetailComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,8 @@ import { ReusableComponentsModule } from '../reusable/reusable-components.module
     ContactusComponent,
     IssuesComponent,
     MastheadComponent,
-    GuidelinesComponent
+    GuidelinesComponent,
+    IssueDetailComponent
   ]
 })
 export class ContentModule { }

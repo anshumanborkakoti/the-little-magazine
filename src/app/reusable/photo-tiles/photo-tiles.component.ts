@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Image } from 'src/app/models/image.model';
+import { ImageService } from 'src/app/image.service';
 
 @Component({
   selector: 'app-photo-tiles',
@@ -9,7 +10,8 @@ import { Image } from 'src/app/models/image.model';
 export class PhotoTilesComponent implements OnInit {
   @Input() image: Image;
   @Input() imageCaption: string;
-  constructor() { }
+  @Input() imageDescription: string;
+  constructor(protected imageService: ImageService) { }
 
   ngOnInit() {
   }

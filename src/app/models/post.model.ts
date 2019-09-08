@@ -27,7 +27,8 @@ export class Post implements CmsClass<Post> {
       cloneCmsClassArray<Issue>(this.issues),
       this.label,
       this.id,
-      cloneCmsClass<User>(this.assignedTo)
+      cloneCmsClass<User>(this.assignedTo),
+      this.postDescription
     );
   }
   constructor(
@@ -41,7 +42,8 @@ export class Post implements CmsClass<Post> {
     public issues: Issue[] = [],
     public label: string = '',
     public id: string = '',
-    public assignedTo: User = new User('Anshuman')
+    public assignedTo: User = null,
+    public postDescription = ''
   ) { }
 
   /**

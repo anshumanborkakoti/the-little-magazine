@@ -26,7 +26,7 @@ export const cloudinaryLib = {
     MainRoutesModule,
     CloudinaryModule.forRoot(cloudinaryLib, { cloud_name: environment.cloudinary_cloud_name })
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

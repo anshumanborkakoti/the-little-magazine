@@ -48,7 +48,7 @@ h1 {
       justify-self: start;
       white-space: pre-line;
       .photo-container {
-        @include tiles-container(350px, min-content);
+        @include tiles-container(auto, auto, 350px, 300px);
       }
     }
     .article-footer-container {
@@ -95,7 +95,7 @@ h1 {
       grid-area: article;
       justify-self: start;
       .photo-container {
-        @include tiles-container(350px, min-content);
+        @include tiles-container(auto, auto, 350px, 300px);
       }
     }
     .article-footer-container {

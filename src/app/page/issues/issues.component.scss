@@ -1,5 +1,4 @@
-iframe {
-  width: 80%;
-  height: 80vh;
-  margin-left: 10vw;
+@import '../../../assets/sass/partials/utils';
+.issues {
+  @include tiles-container(350px, auto, auto, 330px);
 }

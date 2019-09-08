@@ -1,9 +1,11 @@
 <article>
   <div class="photo-image">
-    <img [clSrc]="image.secureUrl" fetch-format="auto" quality="auto" dpr="auto" width="auto" responsive type="fetch"
-      class="photo-image" crop="fill" />
+    <img [clSrc]="imageService.getUnprefixedImage(image.publicId)" fetch-format="auto" quality="auto" dpr="auto"
+      width="auto" responsive type="fetch" class="photo-image" crop="thumb" />
   </div>
   <div class="photo-caption">
     {{ imageCaption }}
+  </div>
+  <div class="photo-description" [innerHTML]="imageDescription">
   </div>
 </article>
