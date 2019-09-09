@@ -24,7 +24,7 @@ export class MastHeadService {
       new MastHead(
         this.imageService.getImage('masthead/Shiron_masthead'),
         'Shiron Antony, Flash Fiction and Essay Editor',
-        `Shiron is a postgraduate in English Literature and has over ten years of experience in writing, editing and copyediting. He loves poetry and horror films and adores the French novel, Maldoror, and works of the Roman poet, Martial. He considers himself “old school” and thinks that that’s cool. For sustenance, Shiron works for a large corporation pretending he knows English.`
+        `Shiron is a postgraduate in English Literature and has over ten years of experience in editing and copyediting. He loves poetry and horror films and adores the French novel, Maldoror, and works of the Roman poet, Martial. He considers himself “old school” and thinks that that’s cool. For sustenance, Shiron works for a large corporation pretending he knows English.`
       ),
       new MastHead(
         this.imageService.getImage('masthead/Parinitha_masthead'),
@@ -32,7 +32,7 @@ export class MastHeadService {
         'Parinitha is an artist, illustrator and designer with a degree in Fine Arts ' +
         'from Karnataka Chitrakala Parishath. She is particularly passionate about urban and travel sketching' +
         'and believes that sketching is the one of the most effective ways to slow down, observe and learn about' +
-        'our surroundings in a fast - paced world. Parinitha is the author and illustrator of the upcoming Children’s' +
+        'our surroundings in a fast - paced world. Parinitha is the author and illustrator of the upcoming Children’s ' +
         'Book Ajji and Mili into the Forest.'
       )
     ]

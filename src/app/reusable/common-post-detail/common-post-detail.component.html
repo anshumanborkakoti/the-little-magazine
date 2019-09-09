@@ -1,12 +1,13 @@
 <div class="detail-container" *ngIf="post.detail.length > 0">
-  <div class="article-header-image-container">
+  <div class="article-header-image-container" *ngIf="!isPhotoMode">
     <!-- postdetail.image -->
     <cl-image [public-id]="post.detail[0].image.publicId" client_hints="true" class="article-header-image" responsive
-      crop="fit" style="height: 30vh;width: 100%; object-fit: cover;">
+      crop="fit" style="height: 30vh;width: 100%; object-fit: cover;" *ngIf="!isPhotoMode">
       <cl-transformation fetch-format="auto" type="fetch" quality="auto" dpr="auto"></cl-transformation>
     </cl-image>
   </div>
-  <span class="article-header-image-caption">
+  <div class="h1 post-header-label" *ngIf="isPhotoMode">{{ post.label}}</div>
+  <span class="article-header-image-caption" *ngIf="!isPhotoMode">
     {{ (isPhotoMode? post.authors[0].name :post.detail[0].caption) | photoCredit }}
   </span>
   <div class="post-detail-description" [innerHTML]="post.postDescription"></div>

@@ -133,7 +133,7 @@ export const Post_insurgent = new Post(
         []
       ),
       'Emile Seguin',
-      `<p>&nbsp;</p><p>Seventeen summers was all he had seen</p><p>And he had been home for the vacation</p><p>For, in studies, was his heart more keen</p><p>And less so, in the &lsquo;prevailing situation&rsquo;.</p><p>A good young soul, blessed by all;</p><p>He was as good with his feet on ball.</p><p>&nbsp;</p><p>A gun placed upon his frightened temple,</p><p>Into the jungle, they marched him.</p><p>A quiet &lsquo;Mangpha&rsquo; was all we could mumble</p><p>To him and his future growing gradually dim.</p><p>His timing of homecoming was unfortunate;</p><p>Or was it his destiny, his fate?</p><p>&nbsp;</p><p>The chief and us villagers did all we could</p><p>But in vain; he was nowhere to be found.</p><p>Him, we knew, they would never shoot;</p><p>For they needed to increase their man-count.</p><p>Yet, the loud wails of his helpless mother;</p><p>Our talk and our sleep, much did it bother.</p><p>&nbsp;</p><p>A gun placed upon his young hands,</p><p>Into their midst, they inducted him</p><p>Till his heart turned around the bend</p><p>And he killed and maimed at his own whim.</p><p>&ldquo;What choice do I have?&rdquo; oft he asked himself</p><p>But, into the answer, he dared not delve.</p><p>&nbsp;</p><p>His &lsquo;comrades&rsquo; called him by an alias,</p><p>A name to which his mother was a stranger</p><p>And his home, the village now eyed him with bias</p><p>As an epitome of mischief and danger</p><p>While the papers and the armymen</p><p>Simply dubbed him &lsquo;the insurgent&rsquo;.</p><p>&nbsp;</p><p>&lsquo;Twas thus one day in summer, his last,</p><p>That a well aimed bullet of a patrolman</p><p>Broke through his ribs and his heart did burst</p><p>And he staggered and fell facedown into the sand.</p><p>That summer was the twentieth he had spent</p><p>And the world rejoiced at the end of an insurgent.</p><p>&nbsp;</p><p><span style='font-size: 0.8em;'>*<em>Mangpha</em> = goodbye</p>`,
+      `<p>&nbsp;</p><p>Seventeen summers was all he had seen</p><p>And he had been home for the vacation</p><p>For, in studies, was his heart more keen</p><p>And less so, in the &lsquo;prevailing situation&rsquo;.</p><p>A good young soul, blessed by all;</p><p>He was as good with his feet on ball.</p><p>&nbsp;</p><p>A gun placed upon his frightened temple,</p><p>Into the jungle, they marched him.</p><p>A quiet &lsquo;Mangpha&rsquo; was all we could mumble</p><p>To him and his future growing gradually dim.</p><p>His timing of homecoming was unfortunate;</p><p>Or was it his destiny, his fate?</p><p>&nbsp;</p><p>The chief and us villagers did all we could</p><p>But in vain; he was nowhere to be found.</p><p>Him, we knew, they would never shoot;</p><p>For they needed to increase their man-count.</p><p>Yet, the loud wails of his helpless mother;</p><p>Our talk and our sleep, much did it bother.</p><p>&nbsp;</p><p>A gun placed upon his young hands,</p><p>Into their midst, they inducted him</p><p>Till his heart turned around the bend</p><p>And he killed and maimed at his own whim.</p><p>&ldquo;What choice do I have?&rdquo; oft he asked himself</p><p>But, into the answer, he dared not delve.</p><p>&nbsp;</p><p>His &lsquo;comrades&rsquo; called him by an alias,</p><p>A name to which his mother was a stranger</p><p>And his home, the village now eyed him with bias</p><p>As an epitome of mischief and danger</p><p>While the papers and the armymen</p><p>Simply dubbed him &lsquo;the insurgent&rsquo;.</p><p>&nbsp;</p><p>&lsquo;Twas thus one day in summer, his last,</p><p>That a well aimed bullet of a patrolman</p><p>Broke through his ribs and his heart did burst</p><p>And he staggered and fell facedown into the sand.</p><p>That summer was the twentieth he had spent</p><p>And the world rejoiced at the end of an insurgent.</p><p>&nbsp;</p><p><span style='font-size: 0.8em;'>*<em>Mangpha</em> - goodbye</p>`,
       '',
       'The Insurgent'
     )
@@ -485,10 +485,10 @@ export const Post_Mayurim = new Post(
 )
 
 export const All_Posts: Post[] = [
-  Post_insurgent,
   Post_Bruce,
   Post_Julie_Kagti,
   Post_Paloma,
   Post_Faraway_World,
-  Post_Mayurim
+  Post_Mayurim,
+  Post_insurgent
 ];
