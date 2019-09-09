@@ -11,7 +11,7 @@ export class PhotoTilesComponent implements OnInit {
   @Input() image: Image;
   @Input() imageCaption: string;
   @Input() imageDescription: string;
-  constructor(protected imageService: ImageService) { }
+  constructor(public imageService: ImageService) { }
 
   ngOnInit() {
   }

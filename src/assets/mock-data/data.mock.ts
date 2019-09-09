@@ -27,7 +27,7 @@ export const Issues = [
     ),
     true,
     false,
-    '../../../assets/test.pdf',
+    '../../../assets/issues/TLJNE_September_2019.pdf',
     true
   )
 ];
