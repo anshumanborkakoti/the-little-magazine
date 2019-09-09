@@ -9,16 +9,9 @@ h1 {
   margin: 0;
 }
 
-.post-header-label {
-  margin: 0;
-  grid-area: header-image;
-  align-self: center;
-  justify-self: center;
-}
-
-@mixin detail-for-medium-smaller-screens {
-  .detail-container {
-    display: grid;
+.detail-container {
+  display: grid;
+  @include small-screen {
     grid-template-columns: 95vw;
     grid-template-rows: min-content min-content min-content min-content 1fr min-content;
     grid-template-areas:
@@ -28,50 +21,21 @@ h1 {
       'description'
       'article'
       'article-footer';
-    column-gap: 20px;
-    row-gap: 20px;
-    align-items: baseline;
-
-    .article-header-image-container {
-      grid-area: header-image;
-    }
-    .article-header-image-caption {
-      grid-area: caption;
-      @include image-caption;
-    }
-    .post-detail-description {
-      grid-area: description;
-      @include primary-italic-font;
-    }
-
-    .contributor-detail {
-      grid-area: aside;
-      justify-self: start;
-      align-self: start;
-      p {
-        font-size: 0.75rem;
-        &.bold {
-          @include primary-bold-font;
-        }
-      }
-    }
-    .article-content {
-      grid-area: article;
-      justify-self: start;
-      white-space: pre-line;
-      .photo-container {
-        @include tiles-container(95vw, auto, auto, 300px);
-      }
-    }
-    .article-footer-container {
-      grid-area: article-footer;
-    }
   }
-}
 
-@mixin detail-for-large-screen {
-  .detail-container {
-    display: grid;
+  @include medium-screen {
+    grid-template-columns: 95vw;
+    grid-template-rows: min-content min-content min-content min-content 1fr min-content;
+    grid-template-areas:
+      'header-image'
+      'caption'
+      'aside'
+      'description'
+      'article'
+      'article-footer';
+  }
+
+  @include larger-screen {
     grid-template-columns: 20% 1fr;
     grid-template-rows: min-content min-content min-content 1fr min-content;
     grid-template-areas:
@@ -80,59 +44,63 @@ h1 {
       'aside description'
       'aside article'
       'article-footer article-footer';
-    column-gap: 20px;
-    row-gap: 20px;
-    align-items: baseline;
     justify-content: space-evenly;
+    margin: 0 10vw;
+  }
+  column-gap: 20px;
+  row-gap: 20px;
+  align-items: baseline;
 
-    .article-header-image-container {
-      grid-area: header-image;
-    }
-    .article-header-image-caption {
-      grid-area: caption;
-      @include image-caption;
-    }
+  .article-header-image-container {
+    grid-area: header-image;
+  }
+  .post-header-label {
+    margin: 0;
+    grid-area: header-image;
+    align-self: center;
+    justify-self: center;
+  }
+  .article-header-image-caption {
+    grid-area: caption;
+    @include image-caption;
+  }
+  .post-detail-description {
+    grid-area: description;
+    @include primary-italic-font;
+  }
 
-    .post-detail-description {
-      grid-area: description;
-      @include primary-italic-font;
-    }
-
-    .contributor-detail {
-      grid-area: aside;
-      justify-self: start;
-      align-self: start;
-      p {
-        font-size: 0.75rem;
-        &.bold {
-          @include primary-bold-font;
-        }
+  .contributor-detail {
+    grid-area: aside;
+    justify-self: start;
+    align-self: start;
+    p {
+      font-size: 0.75rem;
+      &.bold {
+        @include primary-bold-font;
       }
     }
-    .article-content {
-      grid-area: article;
-      justify-self: start;
-      .photo-container {
+  }
+  .article-content {
+    grid-area: article;
+    justify-self: start;
+    white-space: pre-line;
+    @include medium-screen {
+      justify-self: center;
+    }
+    .photo-container {
+      @include small-screen {
+        @include tiles-container(95vw, auto, auto, 300px);
+      }
+      @include medium-screen {
+        @include tiles-container(95vw, auto, auto, 300px);
+      }
+      @include larger-screen {
         @include tiles-container(auto, auto, 350px, 300px);
         //@include tiles-container(95vw, auto, auto, 300px);
       }
     }
-    .article-footer-container {
-      grid-area: article-footer;
-    }
   }
-}
-
-@include larger-screen {
-  @include detail-for-large-screen();
-  .detail-container {
-    margin: 0 10vw;
+  .article-footer-container {
+    grid-area: article-footer;
   }
-}
-@include medium-screen {
-  @include detail-for-medium-smaller-screens();
-}
-
-@include small-screen {
-  @include detail-for-medium-smaller-screens();
 }
