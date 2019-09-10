@@ -35,7 +35,6 @@
 }
 
 // layout
-//TODO Put breakpoint and layout in a single column grid for smaller screens
 @include small-screen {
   .main-content {
     display: grid;
@@ -46,10 +45,9 @@
     .mainImage {
       grid-column: 1/-1;
       height: auto;
-      max-width: 100%;
+      width: 95vw;
       grid-row: 1/2;
       align-self: baseline;
-      object-fit: scale-down;
     }
     .imageOverlay {
       grid-column: 1/-1;

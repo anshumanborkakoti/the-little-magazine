@@ -1,17 +1,12 @@
 <div class="main-content">
-  <img class="mainImage" [clSrc]="mainImageSource" fetch-format="auto" quality="auto" dpr="auto" width="auto" responsive
-    type="fetch" />
+  <img class="mainImage" [clSrc]="mainImageSource" fetch-format="auto" quality="auto" dpr="auto" width="auto"
+    type="fetch" client_hints="true" sizes="100vw" crop="scale" />
   <div class="imageOverlay">
     <div class="overlayText">
       A journal featuring elegant art and literary content from northeast India.
     </div>
   </div>
   <article class="articles">
-    <!-- <div class="notice article-heading">
-      Accepting submissions for Edition 1 now! Go to
-      <a [routerLink]="'/guidelines'">Guidelines</a> and
-      <a [routerLink]="'/submissions'">Process</a>
-    </div> -->
     <span class="article-heading">The Latest</span>
     <ul class="article-list">
       <li class="article" *ngFor="let post of postList">

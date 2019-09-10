@@ -1,4 +1,13 @@
 @import '../../../../assets/sass/partials/utils';
+@import '../../../../assets/sass/partials/_breakpoints';
 .categories {
-  @include tiles-container(350px, auto, auto, 300px);
+  @include medium-screen {
+    @include tiles-container(350px, auto, auto, 300px);
+  }
+  @include larger-screen {
+    @include tiles-container(350px, auto, auto, 300px);
+  }
+  @include small-screen {
+    @include tiles-container(350px, min-content, 80vw, 20vh);
+  }
 }

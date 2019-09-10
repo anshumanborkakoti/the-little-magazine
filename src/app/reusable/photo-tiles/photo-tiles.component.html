@@ -1,7 +1,7 @@
 <article>
   <div class="photo-image">
     <img [clSrc]="imageService.getUnprefixedImage(image.publicId)" fetch-format="auto" quality="auto" dpr="auto"
-      width="auto" responsive type="fetch" class="photo-image" crop="thumb" />
+      width="auto" responsive type="fetch" class="photo-image" crop="thumb" client_hints="true" sizes="100vw" />
   </div>
   <div class="photo-caption">
     {{ imageCaption }}

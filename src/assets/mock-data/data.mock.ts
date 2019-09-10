@@ -11,9 +11,9 @@ const DELIVERY_PREFIX = environment.cloudinary_deliveryUrl_prefix;
 
 export const Issues = [
   new Issue(
-    'September 2019',
+    'Issue 1',
     'WO6d5m7D7zRJhtMAKlbO5qeZylFTFIK83pbt0ANEYG3YQktqqU',
-    'September 2019',
+    'Issue 1',
     new Thumbnail(
       'zd6nfkXE6773VIvVVTQ7iX0xpRktsxsVH8yuuxieYbICoPhPdn',
       new Image(
@@ -23,7 +23,7 @@ export const Issues = [
       'Juan Sinni',
       '',
       '',
-      'September 2019'
+      'Issue 1'
     ),
     true,
     false,
@@ -163,7 +163,7 @@ export const Post_Bruce = new Post(
           'jpg'
         ),
         '',
-        `<p><strong>Bruce McRae</strong>, a Canadian musician currently residing on Salt Spring Island BC, is a multiple Pushcart nominee with over 1,400 poems published internationally in magazines such as Poetry, Rattle, and the North American Review. His books are &lsquo;The So-Called Sonnets&rsquo; (Silenced Press); &lsquo;An Unbecoming Fit Of Frenzy&rsquo; (Cawing Crow Press); and &lsquo;Like As If&rsquo; (Pski&rsquo;s Porch); and &lsquo;Hearsay&rsquo; (The Poet&rsquo;s Haven).</p>`
+        `<p>Bruce McRae, a Canadian musician currently residing on Salt Spring Island BC, is a multiple Pushcart nominee with over 1,400 poems published internationally in magazines such as Poetry, Rattle, and the North American Review. His books are &lsquo;The So-Called Sonnets&rsquo; (Silenced Press); &lsquo;An Unbecoming Fit Of Frenzy&rsquo; (Cawing Crow Press); and &lsquo;Like As If&rsquo; (Pski&rsquo;s Porch); and &lsquo;Hearsay&rsquo; (The Poet&rsquo;s Haven).</p>`
       )
     )
   ],
@@ -215,7 +215,7 @@ export const Post_Bruce = new Post(
 export const Post_Julie_Kagti = new Post(
   [
     new Author(
-      'Jule Kagti',
+      'Julie Kagti',
       '',
       '',
       'eh6SsYiYavHnqYXiccaQgUChaIqeEonTNOJkbkTUbpg2f7R0YK',
@@ -242,7 +242,7 @@ export const Post_Julie_Kagti = new Post(
       'jpg'
     ),
     'Louis Harang',
-    'Jule Kagti',
+    'Julie Kagti',
     '',
     'Dear Ziro'
   ),

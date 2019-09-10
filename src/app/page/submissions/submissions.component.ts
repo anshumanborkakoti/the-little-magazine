@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   <em>The Little Journal</em> invites submissions of visual content, (artwork, photographs,
     and illustrations), poems, and flash fiction, and creative nonfiction (interviews, personal essays,
        and travel essays). We want pieces that don&rsquo;t just tell a story, but make one feel, hear,
-       and think.</p><p>If you have any pieces that fit the requirements listed in our
+       and think. If you have any pieces that fit the requirements listed in our
        <a href="/guidelines">Guidelines</a>&nbsp;page, send your submissions
        to&nbsp;<a href="mailto:littlejournal.ne@gmail.com">littlejournal.ne@gmail.com</a>.</p>
        <div class='h9'>Response Time</div><p>We are a small team and we review every submission with
