@@ -1,7 +1,16 @@
+@import '../../assets/sass/partials/theme-default';
 .footer {
   text-align: center;
   font-style: italic;
   font-size: 12px;
   padding-top: 1.25em;
   padding-bottom: 1em;
+}
+.credits {
+  background-color: $color-primary;
+  vertical-align: bottom;
+  @include primary-bold-font;
+  text-align: right;
+  font-size: 0.5rem;
+  padding: 10px 10px 10px 0;
 }

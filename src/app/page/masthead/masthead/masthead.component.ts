@@ -29,6 +29,7 @@ export class MastheadComponent implements OnInit {
         thumbnail.image = new Image();
         thumbnail.image.secureUrl = masthead.image;
         thumbnail.content = masthead.bioContent;
+        thumbnail.header = masthead.bioHeader;
         const bio = new BioModel(name, thumbnail);
         return bio;
       });
