@@ -10,6 +10,7 @@ import { ImageService } from 'src/app/image.service';
 export class PhotoTilesComponent implements OnInit {
   @Input() image: Image;
   @Input() imageCaption: string;
+  @Input() imageCredit: string;
   @Input() imageDescription: string;
   constructor(public imageService: ImageService) { }
 

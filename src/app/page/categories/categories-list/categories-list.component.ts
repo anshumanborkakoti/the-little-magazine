@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './categories-list.component.html',
   styleUrls: ['./categories-list.component.scss']
 })
-export class CategoriesListComponent implements OnInit {
+export class CategoriesListComponent implements OnInit, OnDestroy {
   categories: Category[] = [];
   constructor(
     private categoryService: CategoriesService,
@@ -18,8 +18,23 @@ export class CategoriesListComponent implements OnInit {
     protected imageService: ImageService
   ) { }
 
+  private categoriesSubscription = new Subscription();
+  private isLoadingSubscription = new Subscription();
+  isLoading = false;
+
   ngOnInit() {
-    this.categories = this.categoryService.getCategories();
+    this.categoryService.getIsLoading().subscribe(aIsLoading => this.isLoading = aIsLoading);
+    this.categoriesSubscription = this
+      .categoryService
+      .getCategoriesChanged()
+      .subscribe(aCategories => {
+        if (Array.isArray(aCategories)) {
+          this.categories = [...aCategories];
+        } else {
+          this.categories = [aCategories];
+        }
+      });
+    this.categoryService.getAllCategories();
   }
 
   onCategorySelected(categoryId: string) {
@@ -29,5 +44,10 @@ export class CategoriesListComponent implements OnInit {
       }
     };
     this.router.navigate(['/categories/posts'], navExtra);
+  }
+
+  ngOnDestroy(): void {
+    this.categoriesSubscription.unsubscribe();
+    this.isLoadingSubscription.unsubscribe();
   }
 }

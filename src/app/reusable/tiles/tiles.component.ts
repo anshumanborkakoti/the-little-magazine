@@ -11,6 +11,7 @@ export class TilesComponent implements OnInit {
   @Input() header;
   @Input() bodyContent;
   @Input() footerContent;
+  @Input() imageCredit;
 
   constructor() { }
 

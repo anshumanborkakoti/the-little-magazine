@@ -1,9 +1,16 @@
-import { Image } from './image.model';
+import { createImage, Image } from './image.model';
 import { CmsClass } from './general-class.interface';
 import { cloneCmsClass, isCmsClassesEqual, makeid } from '../common/util/utils';
 
-
-export class Thumbnail implements CmsClass<Thumbnail>{
+export class Thumbnail implements CmsClass<Thumbnail> {
+  *[Symbol.iterator]() {
+    yield this.id;
+    yield* this.image;
+    yield this.caption;
+    yield this.content;
+    yield this.footer;
+    yield this.header;
+  }
   clone(): Thumbnail {
     return new Thumbnail(
       this.id,
@@ -16,7 +23,7 @@ export class Thumbnail implements CmsClass<Thumbnail>{
   }
 
   constructor(
-    public id = makeid(10),
+    public id: string = null,
     public image: Image = new Image(),
     public caption: string = '',
     public content: string = '',
@@ -32,12 +39,16 @@ export class Thumbnail implements CmsClass<Thumbnail>{
     if (!that) {
       return false;
     }
-    return this.id === that.id
-      && isCmsClassesEqual(this.image, that.image)
-      && this.caption === that.caption
-      && this.content === that.content
-      && this.footer === that.footer
-      && this.header === that.header
-      && this.maxCharCount === that.maxCharCount;
+    return this.id === that.id;
   }
+}
+export function createThumbnail({ _id, id, image, caption, content, footer, header }): Thumbnail {
+  return new Thumbnail(
+    _id || id || null,
+    createImage(image),
+    caption,
+    content,
+    footer,
+    header
+  );
 }

@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   cloudinary_cloud_name: 'dcom6pwyq',
-  cloudinary_deliveryUrl_prefix: 'tljnesandbox'
+  cloudinary_deliveryUrl_prefix: 'tljnesandbox',
+  api_url: 'http://localhost:3000/tljneapi'
 };
 
 /*

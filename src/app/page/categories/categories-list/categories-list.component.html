@@ -1,7 +1,8 @@
-<!-- <div class="comingsoon"></div> -->
-<div class="categories">
+<app-spinner *ngIf="isLoading"></app-spinner>
+<div class="categories" *ngIf="!isLoading">
   <app-tiles *ngFor="let category of categories" [bodyContent]="category.thumbnail.content"
     [headerImagePath]="imageService.getUnprefixedImage(category.thumbnail.image.publicId)"
     [footerContent]="category.thumbnail.footer" [header]="category.thumbnail.header"
-    [imageCaption]="category.thumbnail.caption" (click)="onCategorySelected(category.id)"></app-tiles>
+    [imageCaption]="category.thumbnail.caption" (click)="onCategorySelected(category.id)"
+    [imageCredit]="category.thumbnail.image.credit"></app-tiles>
 </div>

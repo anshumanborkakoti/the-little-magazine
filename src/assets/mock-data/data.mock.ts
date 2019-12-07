@@ -399,8 +399,14 @@ export const Post_Faraway_World: Post = new Post(
   Issues,
   'A Faraway World',
   'k0OsbhN8hovFxg4r73vyWW02cPKBnp5xkRDUf3AwRSC5z35lfm',
-  null,
-  `<p>The Photo Essay &ldquo;A Faraway World&rdquo; explores the Ze Mnui village in Manipur where the Zeme tribe resides. </p>`,
+  new PostDetail(
+    null,
+    null,
+    null,
+    `<p>The Photo Essay &ldquo;A Faraway World&rdquo; explores the Ze Mnui village in Manipur where the Zeme tribe resides. </p>`,
+    null
+  ),
+  null
 );
 
 export const Post_Mayurim = new Post(
@@ -480,8 +486,14 @@ export const Post_Mayurim = new Post(
   Issues,
   'Fables of the Earth',
   'g934ZwmnFYYIETEMLpeUu8S74ryZc3SD3LWMqbYPVNYWKQx6h4',
-  null,
-  `<p>The photo essay &ldquo;Fables of the Earth&rdquo; showcases the Hira potters&rsquo; community in Assam&rsquo;s Barpeta district. For the Hira community, pottery is not just an occupation, but a sense of identity and collective artistry passed down since (what&rsquo;s believed to be) 600 BC.</p>`
+  new PostDetail(
+    null,
+    null,
+    null,
+    `<p>The photo essay &ldquo;Fables of the Earth&rdquo; showcases the Hira potters&rsquo; community in Assam&rsquo;s Barpeta district. For the Hira community, pottery is not just an occupation, but a sense of identity and collective artistry passed down since (what&rsquo;s believed to be) 600 BC.</p>`,
+    null
+  ),
+  null
 )
 
 export const All_Posts: Post[] = [

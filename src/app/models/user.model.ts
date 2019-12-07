@@ -1,7 +1,5 @@
 import { CmsClass } from './general-class.interface';
-import { makeid } from '../common/util/utils';
-
-export class User implements CmsClass<User>{
+export class User implements CmsClass<User> {
 
   equals(that: User): boolean {
     return this.id === that.id;
@@ -21,9 +19,21 @@ export class User implements CmsClass<User>{
     public name: string = '',
     public username: string = '',
     public password: string = '',
-    public id: string = makeid(10),
+    public id: string = '',
     public email: string = '',
     public address: string = '',
     public roles: string[] = []
   ) { }
+}
+
+export function createUser({ name, username, password, id, _id, email, address, roles }): User {
+  return new User(
+    name,
+    username,
+    password,
+    _id || id,
+    email,
+    address,
+    [...roles]
+  );
 }

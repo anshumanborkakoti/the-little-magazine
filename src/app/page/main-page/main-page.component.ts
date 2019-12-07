@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { ImageService } from 'src/app/image.service';
 import { PostsService } from '../posts/posts.service';
 import { Post } from 'src/app/models/post.model';
-import { Issues } from 'src/assets/mock-data/data.mock';
+import { Subscription } from 'rxjs';
+import { IssueService } from '../issues/issues.service';
 
 @Component({
   selector: 'app-main-page',
@@ -12,18 +13,45 @@ import { Issues } from 'src/assets/mock-data/data.mock';
     './main-page.component.scss'
   ]
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent implements OnInit, OnDestroy {
   mainImageSource: string;
   postList: Post[];
+  renderMainImage = false;
+  renderList = false;
+  isLoading = false;
 
-  constructor(private imageService: ImageService, private postService: PostsService) { }
+  private postSubscription: Subscription;
+  private issueSubscription: Subscription;
+  private loadingSubscription: Subscription;
+
+
+  constructor(
+    private imageService: ImageService = null,
+    private postService: PostsService,
+    private issueService: IssueService
+  ) { }
 
   ngOnInit() {
-    // TODO remove after mock is removed
-    const latestIssue = Issues.find(aIssue => {
-      return aIssue.latest;
-    });
-    this.mainImageSource = this.imageService.getUnprefixedImage(latestIssue.thumbnail.image.publicId);
-    this.postList = this.postService.getPostsByIssue(latestIssue.id);
+    this.loadingSubscription = this.issueService.getIsLoading().subscribe(aIsLoading => this.isLoading = aIsLoading);
+    this.issueSubscription = this.issueService
+      .getLatestIssue()
+      .subscribe(aLatestIssue => {
+        this.mainImageSource = this.imageService.getUnprefixedImage(aLatestIssue.thumbnail.image.publicId);
+        this.renderMainImage = true;
+        this.postSubscription = this.postService
+          .getPostsByIssue(aLatestIssue.id)
+          .subscribe(aPosts => {
+            this.postList = aPosts;
+            this.renderList = true;
+          });
+      });
+  }
+
+  ngOnDestroy(): void {
+    if (this.postSubscription) {
+      this.postSubscription.unsubscribe();
+    }
+    this.issueSubscription.unsubscribe();
+    this.loadingSubscription.unsubscribe();
   }
 }

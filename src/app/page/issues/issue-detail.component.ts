@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Issue } from 'src/app/models/issue.model';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IssueService } from './issues .service';
+import { IssueService } from './issues.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
@@ -28,7 +28,7 @@ export class IssueDetailComponent implements OnInit {
 
   ngOnInit(): void {
     const issueID = this.activatedRoute.snapshot.params['issueid'];
-    this.issue = this.issueService.getIssueById(issueID);
+    this.issue = this.issueService.getIssue(issueID);
     this.issueUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.issue.pdfUrl);
   }
 

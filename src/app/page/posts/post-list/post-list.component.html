@@ -1,7 +1,9 @@
-<div class="posts">
+<app-spinner *ngIf="isLoading"></app-spinner>
+<div class="posts" *ngIf="!isLoading">
   <app-tiles *ngFor="let post of posts" [bodyContent]="post.thumbnail.content"
     [headerImagePath]="imageService.getUnprefixedImage(post.thumbnail.image.publicId)"
     [footerContent]="post.thumbnail.footer" [header]="post.thumbnail.header" [imageCaption]="post.thumbnail.caption"
+    [imageCredit]="post.thumbnail.image.credit"
     routerLink='{{post.category.name | lowercase| removespaces}}/{{post.id}}'>
   </app-tiles>
   <div *ngIf="posts.length === 0">No Posts!</div>

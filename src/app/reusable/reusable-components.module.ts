@@ -8,6 +8,7 @@ import { BioComponent } from './bio/bio.component';
 import { PhotoTilesComponent } from './photo-tiles/photo-tiles.component';
 import { RemoveSpaces } from './remove-space.pipe';
 import { PhotoCreditPipe } from './photo-credit.pipe';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PhotoCreditPipe } from './photo-credit.pipe';
     BioComponent,
     PhotoTilesComponent,
     RemoveSpaces,
-    PhotoCreditPipe
+    PhotoCreditPipe,
+    SpinnerComponent
   ],
   imports: [CommonModule, FormsModule, CloudinaryModule],
   exports: [
@@ -24,7 +26,8 @@ import { PhotoCreditPipe } from './photo-credit.pipe';
     CommonPostDetailComponent,
     BioComponent,
     PhotoTilesComponent,
-    RemoveSpaces
+    RemoveSpaces,
+    SpinnerComponent
   ]
 })
 export class ReusableComponentsModule { }

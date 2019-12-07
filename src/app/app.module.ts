@@ -10,6 +10,7 @@ import { TitleComponent } from './title/title.component';
 import { CloudinaryModule } from '@cloudinary/angular-5.x';
 import { Cloudinary } from 'cloudinary-core';
 import { environment } from 'src/environments/environment';
+import { HttpClientModule } from '@angular/common/http';
 
 export const cloudinaryLib = {
   Cloudinary: Cloudinary
@@ -23,6 +24,7 @@ export const cloudinaryLib = {
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     MainRoutesModule,
     CloudinaryModule.forRoot(cloudinaryLib, { cloud_name: environment.cloudinary_cloud_name })
   ],

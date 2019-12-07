@@ -62,7 +62,7 @@ h1 {
   }
   .article-header-image-caption {
     grid-area: caption;
-    @include image-caption;
+    @include image-credit;
   }
   .post-detail-description {
     grid-area: description;

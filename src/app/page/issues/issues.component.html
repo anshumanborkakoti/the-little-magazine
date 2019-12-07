@@ -1,10 +1,9 @@
-<div class="issues">
+<app-spinner *ngIf="isLoading"></app-spinner>
+<div class="issues" *ngIf="!isLoading">
   <app-tiles *ngFor="let issue of issues" [bodyContent]="issue.thumbnail.content"
     [headerImagePath]="imageService.getUnprefixedImage(issue.thumbnail.image.publicId)"
     [footerContent]="issue.thumbnail.footer" [header]="issue.thumbnail.header" [imageCaption]="issue.thumbnail.caption"
-    routerLink='detail/{{issue.id}}'>
+    [imageCredit]="issue.thumbnail.image.credit" routerLink='detail/{{issue.id}}'>
   </app-tiles>
   <div *ngIf="issues.length === 0">No issues!</div>
 </div>
-
-<router-outlet></router-outlet>

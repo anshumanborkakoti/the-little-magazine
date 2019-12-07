@@ -13,7 +13,11 @@ import { ImageService } from 'src/app/image.service';
 export class PostListComponent implements OnInit, OnDestroy {
 
   posts: Post[] = [];
+  isLoading = false;
   private querySubscription: Subscription;
+  private postSubscription: Subscription;
+  private loadingSubscription: Subscription;
+  private categorySubscription: Subscription;
 
   constructor(
     private acRoute: ActivatedRoute,
@@ -22,6 +26,8 @@ export class PostListComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
+    this.loadingSubscription = this.postsService.getIsLoading()
+      .subscribe(aIsLoading => this.isLoading = aIsLoading);
     this._fetchPosts(this.acRoute.snapshot.queryParamMap);
     this.querySubscription = this.acRoute.queryParamMap.subscribe(qmap => {
       this._fetchPosts(qmap);
@@ -30,15 +36,27 @@ export class PostListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.querySubscription.unsubscribe();
+    this.postSubscription.unsubscribe();
+    this.loadingSubscription.unsubscribe();
+    if (this.categorySubscription) {
+      this.categorySubscription.unsubscribe();
+    }
+
   }
 
   _fetchPosts(map: ParamMap) {
     const categoryId = map.get('categoryId');
     if (categoryId) {
-      this.posts = this.postsService.getPostsByCategory(categoryId);
+      this.postSubscription = this.postsService
+        .getPostsByCategory(categoryId)
+        .subscribe(aPosts => this.posts = aPosts);
     } else {
+      this.postSubscription = this.postsService
+        .getPostsChanged()
+        .subscribe(aPosts => this.posts = aPosts);
       // Get all posts
-      this.posts = this.postsService.getAllPosts();
+      this.postsService.getAllPosts();
+
     }
   }
 

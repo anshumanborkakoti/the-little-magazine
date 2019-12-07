@@ -9,7 +9,9 @@ article {
   grid-template-rows:
     [image-header-start]
     1fr
-    [image-header-end caption-start]
+    [image-header-end credit-start]
+    min-content
+    [credit-end caption-start]
     min-content
     [caption-end header-start]
     min-content
@@ -35,6 +37,10 @@ article {
     width: 100%;
     height: 100%;
     border-radius: 10px 10px 0 0;
+  }
+  .article-credit {
+    grid-row: credit-start/credit-end;
+    @include image-credit;
   }
   .article-caption {
     grid-row: caption-start/caption-end;

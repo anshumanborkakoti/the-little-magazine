@@ -1,6 +1,7 @@
+<app-spinner *ngIf="isLoading"></app-spinner>
 <div class="main-content">
-  <img class="mainImage" [clSrc]="mainImageSource" fetch-format="auto" quality="auto" dpr="auto" width="auto"
-    type="fetch" client_hints="true" sizes="100vw" crop="scale" />
+  <img *ngIf="renderMainImage" class="mainImage" [clSrc]="mainImageSource" fetch-format="auto" quality="auto" dpr="auto"
+    width="auto" type="fetch" client_hints="true" sizes="100vw" crop="scale" />
   <div class="imageOverlay">
     <div class="overlayText">
       A journal featuring elegant art and literary content from northeast India.
@@ -8,7 +9,7 @@
   </div>
   <article class="articles">
     <span class="article-heading">The Latest</span>
-    <ul class="article-list">
+    <ul class="article-list" *ngIf="renderList">
       <li class="article" *ngFor="let post of postList">
         <a routerLink="/categories/posts/{{post.category.name | removespaces| lowercase}}/{{post.id}}">
           {{post.label}} by {{post.authors[0].name}}

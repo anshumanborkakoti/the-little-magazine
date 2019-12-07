@@ -1,4 +1,5 @@
-<div class="detail-container" *ngIf="post.detail.length > 0">
+<app-spinner *ngIf="isLoading"></app-spinner>
+<div class="detail-container" *ngIf="renderDetail">
   <div class="article-header-image-container" *ngIf="!isPhotoMode">
     <!-- postdetail.image -->
     <cl-image [public-id]="post.detail[0].image.publicId" client_hints="true" class="article-header-image" responsive
@@ -8,9 +9,9 @@
   </div>
   <div class="h1 post-header-label" *ngIf="isPhotoMode">{{ post.label}}</div>
   <span class="article-header-image-caption" *ngIf="!isPhotoMode">
-    {{ (isPhotoMode? post.authors[0].name :post.detail[0].caption) | photoCredit }}
+    {{ (isPhotoMode? post.authors[0].name :post.detail[0].image.credit) | photoCredit }}
   </span>
-  <div class="post-detail-description" [innerHTML]="post.postDescription"></div>
+  <div class="post-detail-description" [innerHTML]="post.content.content"></div>
 
   <aside class="contributor-detail">
     <p>
@@ -36,7 +37,7 @@
           <!-- postdetail.header-->
         </h1>
         <span [innerHTML]="detail.content"></span>
-        <div *ngIf="(post.detail.length > 1 && i < post.detail.length - 1)" class="separator"></div>
+        <div *ngIf="post.detail.length > 1" class="separator"></div>
       </ng-container>
     </span>
 
@@ -58,6 +59,6 @@
   </div>
 </div>
 
-<div *ngIf="post.detail.length === 0">
+<div *ngIf="!renderDetail">
   <!-- No post details -->
 </div>

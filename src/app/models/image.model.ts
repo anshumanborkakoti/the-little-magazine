@@ -1,15 +1,20 @@
 import { CmsClass } from './general-class.interface';
 
 export class Image implements CmsClass<Image> {
+  *[Symbol.iterator]() {
+    yield this.publicId;
+    yield this.format;
+    yield this.tags;
+    yield this.secureUrl;
+    yield this.url;
+    yield this.id;
+    yield this.credit;
+  }
   equals(that: Image): boolean {
     if (!that) {
       return false;
     }
-    return this.publicId === that.publicId
-      && this.format === that.format
-      && this.secureUrl === that.secureUrl
-      && this.url === that.url
-      && JSON.stringify(this.tags) === JSON.stringify(that.tags);
+    return this.id === that.id;
   }
   clone() {
     return new Image(
@@ -17,7 +22,9 @@ export class Image implements CmsClass<Image> {
       this.format,
       [...this.tags],
       this.secureUrl,
-      this.url
+      this.url,
+      this.id,
+      this.credit
     );
   }
   constructor(
@@ -25,7 +32,20 @@ export class Image implements CmsClass<Image> {
     public format: string = '',
     public tags: string[] = [],
     public secureUrl: string = '',
-    public url: string = ''
+    public url: string = '',
+    public id: string = null,
+    public credit = ''
   ) {
   }
+}
+export function createImage({ id, publicId, format, tags, secureUrl, url, _id, credit }): Image {
+  return new Image(
+    publicId,
+    format,
+    [...tags],
+    secureUrl,
+    url,
+    _id || id || null,
+    credit
+  );
 }

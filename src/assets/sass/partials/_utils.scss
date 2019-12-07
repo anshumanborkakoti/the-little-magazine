@@ -96,9 +96,14 @@
   padding: 10px;
 }
 
-@mixin image-caption {
+@mixin image-credit {
   padding-right: 5px;
   justify-self: end;
   @include primary-italic-font;
   font-size: 0.5rem;
+}
+
+@mixin image-caption {
+  @include image-credit;
+  justify-self: center;
 }
