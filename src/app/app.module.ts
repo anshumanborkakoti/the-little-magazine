@@ -11,6 +11,7 @@ import { CloudinaryModule } from '@cloudinary/angular-5.x';
 import { Cloudinary } from 'cloudinary-core';
 import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 export const cloudinaryLib = {
   Cloudinary: Cloudinary
@@ -26,7 +27,8 @@ export const cloudinaryLib = {
     BrowserModule,
     HttpClientModule,
     MainRoutesModule,
-    CloudinaryModule.forRoot(cloudinaryLib, { cloud_name: environment.cloudinary_cloud_name })
+    CloudinaryModule.forRoot(cloudinaryLib, { cloud_name: environment.cloudinary_cloud_name }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

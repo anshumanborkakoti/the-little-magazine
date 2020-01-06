@@ -1,0 +1,55 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/*.js"
+        ],
+        "urls": [
+          "**/res.cloudinary.com/**",
+          "**/fonts.google.com/**",
+          "**/fonts.gstatic.com/**",
+          "**/s3.ap-south-1.amazonaws.com/issues.the-little-journal.com/**"
+        ]
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "tljneapi",
+      "urls": [
+        "**/tljneapi/categories",
+        "**/tljneapi/issues",
+        "**/tljneapi/posts/**",
+        "**/tljneapi/posts?**"
+      ],
+      "version": 2,
+      "cacheConfig": {
+        "maxAge": "7d",
+        "timeout": "30s",
+        "maxSize": 50,
+        "strategy": "performance"
+      }
+    }
+  ]
+}
