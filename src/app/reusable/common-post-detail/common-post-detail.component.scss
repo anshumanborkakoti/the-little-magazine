@@ -84,6 +84,9 @@ h1 {
     grid-area: article;
     justify-self: start;
     white-space: pre-line;
+    .article-content-header {
+      margin: 0 0 0.75em 0;
+    }
     @include medium-screen {
       justify-self: center;
     }

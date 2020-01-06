@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   cloudinary_cloud_name: 'dcom6pwyq',
   cloudinary_deliveryUrl_prefix: 'tljnesandbox',
+  // api_url: 'http://tljne-env.kmhieh52tp.ap-south-1.elasticbeanstalk.com/tljneapi'
   api_url: 'http://localhost:3000/tljneapi'
 };
 

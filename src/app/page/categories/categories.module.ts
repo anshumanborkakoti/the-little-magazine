@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { CategoriesListComponent } from './categories-list/categories-list.component';
 import { RouterModule, Route } from '@angular/router';
 import { ReusableComponentsModule } from 'src/app/reusable/reusable-components.module';
-import { HttpClientModule } from '@angular/common/http';
 
 
 const routes: Route[] = [

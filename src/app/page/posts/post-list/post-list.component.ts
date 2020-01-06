@@ -28,7 +28,6 @@ export class PostListComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.loadingSubscription = this.postsService.getIsLoading()
       .subscribe(aIsLoading => this.isLoading = aIsLoading);
-    this._fetchPosts(this.acRoute.snapshot.queryParamMap);
     this.querySubscription = this.acRoute.queryParamMap.subscribe(qmap => {
       this._fetchPosts(qmap);
     });

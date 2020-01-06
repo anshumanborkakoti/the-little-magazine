@@ -32,7 +32,7 @@ export class MainPageComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    this.loadingSubscription = this.issueService.getIsLoading().subscribe(aIsLoading => this.isLoading = aIsLoading);
+    this.loadingSubscription = this.postService.getIsLoading().subscribe(aIsLoading => this.isLoading = aIsLoading);
     this.issueSubscription = this.issueService
       .getLatestIssue()
       .subscribe(aLatestIssue => {
