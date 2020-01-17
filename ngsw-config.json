@@ -45,9 +45,9 @@
       ],
       "version": 2,
       "cacheConfig": {
-        "maxAge": "7d",
-        "timeout": "30s",
-        "maxSize": 50,
+        "maxAge": "1d",
+        "timeout": "5s",
+        "maxSize": 100,
         "strategy": "performance"
       }
     }

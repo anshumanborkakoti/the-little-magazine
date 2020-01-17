@@ -107,3 +107,8 @@
   @include image-credit;
   justify-self: center;
 }
+
+@mixin error {
+  @include primary-bold-font();
+  color: red;
+}

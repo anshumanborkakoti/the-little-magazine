@@ -1,0 +1,12 @@
+@import '../../../assets/sass/partials/utils';
+@import '../../../assets/sass/partials/theme-default';
+
+.comments {
+  .error {
+    @include error;
+  }
+  form {
+    width: 100%;
+    border: solid $rgba-secondary-2 1px;
+  }
+}

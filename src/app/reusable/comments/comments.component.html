@@ -1,0 +1,26 @@
+<div class="comments">
+  <form #f="ngForm" (ngSubmit)="onFormSubmit()">
+    <div>
+      <input type="text" name="author" required ngModel id="name">
+    </div>
+    <div
+      *ngIf="f.form.controls['author'].status === 'INVALID' && f.form.controls['author'].touched && f.form.controls['author'].errors"
+      class="error">
+      Please enter a name
+    </div>
+    <div>
+      <textarea name="comment" required maxlength="1000" ngModel id="commentdetail"></textarea>
+    </div>
+    <div
+      *ngIf="f.form.controls['comment'].status === 'INVALID' && f.form.controls['comment'].touched && f.form.controls['comment'].errors"
+      class="error">
+      Please enter a comment
+    </div>
+    <div class="btn-group">
+      <label class="btn-primary">
+        <button type="submit" [disabled]="f.form.controls['comment'].status === 'INVALID'">Save
+          Comment</button>
+      </label>
+    </div>
+  </form>
+</div>

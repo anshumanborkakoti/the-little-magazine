@@ -9,6 +9,7 @@ import { PhotoTilesComponent } from './photo-tiles/photo-tiles.component';
 import { RemoveSpaces } from './remove-space.pipe';
 import { PhotoCreditPipe } from './photo-credit.pipe';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { CommentsModule } from './comments/comments.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
     PhotoCreditPipe,
     SpinnerComponent
   ],
-  imports: [CommonModule, FormsModule, CloudinaryModule],
+  imports: [CommonModule, FormsModule, CloudinaryModule, CommentsModule],
   exports: [
     TilesComponent,
     CommonPostDetailComponent,

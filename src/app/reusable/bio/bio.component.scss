@@ -3,6 +3,7 @@
 @import '../../../assets/sass/partials/breakpoints';
 @media only screen and (min-width: 750px) {
   article {
+    height: 100%;
     display: grid;
     grid-template-columns: [image-area-start] 25vw [image-area-end content-area-start] 1fr [content-area-end];
     grid-template-rows: [row-start] 30vh [row-end];
@@ -42,6 +43,8 @@
 
 @media only screen and (max-width: 750px) {
   article {
+    box-sizing: border-box;
+    height: 100%;
     display: grid;
     grid-template-rows: [image-area-start] 50% [image-area-end content-area-start] 50% [content-area-end];
     grid-template-columns: [column-start] 90% [column-end];
