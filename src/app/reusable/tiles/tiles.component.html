@@ -1,9 +1,9 @@
 <article>
-  <div class="article-header-image">
+  <div class="article-header-image" *ngIf="showImage">
     <img [clSrc]="headerImagePath" fetch-format="auto" quality="auto" dpr="auto" width="auto" responsive type="fetch"
       class="article-header-image" crop="scale" client_hints="true" sizes="100vw" />
   </div>
-  <div class="article-credit">{{ imageCredit | photoCredit }}</div>
+  <div class="article-credit" *ngIf="showImage">{{ imageCredit | photoCredit }}</div>
   <div class="article-caption">{{ imageCaption }}</div>
 
   <div class="article-header">{{ header }}</div>

@@ -41,7 +41,8 @@
         "**/tljneapi/categories",
         "**/tljneapi/issues",
         "**/tljneapi/posts/**",
-        "**/tljneapi/posts?**"
+        "**/tljneapi/posts?**",
+        "**/tljneapi/approved/comments**"
       ],
       "version": 2,
       "cacheConfig": {

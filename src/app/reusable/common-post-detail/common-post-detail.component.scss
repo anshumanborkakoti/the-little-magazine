@@ -13,37 +13,40 @@ h1 {
   display: grid;
   @include small-screen {
     grid-template-columns: 95vw;
-    grid-template-rows: min-content min-content min-content min-content 1fr min-content;
+    grid-template-rows: min-content min-content min-content min-content 1fr max-content max-content;
     grid-template-areas:
       'header-image'
       'caption'
       'aside'
       'description'
       'article'
-      'article-footer';
+      'article-footer'
+      'comments';
   }
 
   @include medium-screen {
     grid-template-columns: 95vw;
-    grid-template-rows: min-content min-content min-content min-content 1fr min-content;
+    grid-template-rows: min-content min-content min-content min-content 1fr min-content max-content;
     grid-template-areas:
       'header-image'
       'caption'
       'aside'
       'description'
       'article'
-      'article-footer';
+      'article-footer'
+      'comments';
   }
 
   @include larger-screen {
     grid-template-columns: 20% 1fr;
-    grid-template-rows: min-content min-content min-content 1fr min-content;
+    grid-template-rows: min-content min-content min-content 1fr min-content max-content;
     grid-template-areas:
       'header-image header-image'
       '. caption'
       'aside description'
       'aside article'
-      'article-footer article-footer';
+      'article-footer article-footer'
+      'comments comments';
     justify-content: space-evenly;
     margin: 0 10vw;
   }
@@ -105,5 +108,8 @@ h1 {
   }
   .article-footer-container {
     grid-area: article-footer;
+  }
+  .article-comments {
+    grid-area: comments;
   }
 }

@@ -57,9 +57,8 @@
 
     </app-bio>
   </div>
+  <app-comments [postId]="post.id" class="article-comments"></app-comments>
 </div>
-
-<app-comments [postId]="post.id"></app-comments>
 
 <div *ngIf="!renderDetail">
   <!-- No post details -->

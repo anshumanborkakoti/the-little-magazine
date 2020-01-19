@@ -7,7 +7,8 @@ export class Comment implements CmsClass<Comment> {
     public postId: string = '',
     public author: string = '',
     public comment: string = '',
-    public approved: boolean = false
+    public approved: boolean = false,
+    public timestamp: Date = null
   ) { }
 
   equals(that: Comment): boolean {
@@ -21,17 +22,19 @@ export class Comment implements CmsClass<Comment> {
       this.postId,
       this.author,
       this.comment,
-      this.approved
+      this.approved,
+      this.timestamp
     );
   }
 }
 
-export const createComment = ({ id, _id, postId, author, comment, approved }): Comment => {
+export const createComment = ({ id, _id, postId, author, comment, approved, timestamp }): Comment => {
   return new Comment(
     id || id || null,
     postId,
     author,
     comment,
-    approved
+    approved,
+    timestamp
   );
 }

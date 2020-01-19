@@ -5,8 +5,71 @@
   .error {
     @include error;
   }
-  form {
+  .width75 {
+    width: 75%;
+  }
+
+  .separator {
+    height: 2vh;
     width: 100%;
-    border: solid $rgba-secondary-2 1px;
+  }
+  .separator-border {
+    border-top: separator-color();
+  }
+  .comments-form {
+    width: 100%;
+    font-size: 0.85rem;
+    border-top: separator-color();
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: max-content;
+    row-gap: 3vh;
+    justify-items: start;
+    align-content: space-evenly;
+    justify-content: space-around;
+    column-gap: 10px;
+    padding-left: 10px;
+    label {
+      button {
+        &:disabled {
+          color: $color-secondary;
+        }
+      }
+    }
+    input,
+    textarea {
+      width: 75%;
+    }
+    textarea {
+      height: 20vh;
+    }
+    .submitted-info {
+      @include primary-bold-italic-font();
+    }
+  }
+  .comment-container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr;
+    row-gap: 20px;
+    justify-content: center;
+    justify-items: center;
+    article {
+      width: 95%;
+      box-shadow: 5px 5px 10px darken(rgba-secondary-2(0.7), 10%);
+      .comment-timestamp {
+        margin: 10px;
+        font-size: 0.8em;
+        text-align: right;
+      }
+      .comment-header {
+        @include primary-bold-font;
+        margin: 10px;
+      }
+      .comment-content {
+        white-space: pre-line;
+        margin: 10px;
+      }
+    }
   }
 }

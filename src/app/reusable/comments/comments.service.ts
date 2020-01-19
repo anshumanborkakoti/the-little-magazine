@@ -35,7 +35,7 @@ export class CommentsService {
     this
       .http
       .get<{ code: string, comments: any[] }>
-      (`${this.api_url}/approved/${postId}`)
+      (`${this.api_url}/${postId}`)
       .pipe(map(aResult => aResult.comments.map(aComment => createComment(aComment))))
       .subscribe(aComments => {
         commentsSub.next(cloneCmsClassArray(aComments));
@@ -54,6 +54,7 @@ export class CommentsService {
    * @param aComment Comment to save
    */
   saveComment(aComment: Comment) {
+    aComment.timestamp = new Date();
     this.isLoading.next(true);
     this.isSaved.next(false);
     this.http.post<{ code: string }>
