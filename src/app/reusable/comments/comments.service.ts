@@ -35,7 +35,7 @@ export class CommentsService {
     this
       .http
       .get<{ code: string, comments: any[] }>
-      (`${this.api_url}/${postId}`)
+      (`${this.api_url}/approved/${postId}`)
       .pipe(map(aResult => aResult.comments.map(aComment => createComment(aComment))))
       .subscribe(aComments => {
         commentsSub.next(cloneCmsClassArray(aComments));
