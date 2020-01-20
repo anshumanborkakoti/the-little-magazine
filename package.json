@@ -23,7 +23,6 @@
     "@angular/router": "^8.2.14",
     "@angular/service-worker": "^8.2.14",
     "@cloudinary/angular-5.x": "^1.1.0",
-    "@ng-bootstrap/ng-bootstrap": "^5.1.4",
     "cloudinary-core": "^2.8.0",
     "core-js": "^3.6.1",
     "rxjs": "^6.5.4",
