@@ -47,7 +47,7 @@
       "version": 2,
       "cacheConfig": {
         "maxAge": "1d",
-        "timeout": "5s",
+        "timeout": "15s",
         "maxSize": 100,
         "strategy": "performance"
       }
