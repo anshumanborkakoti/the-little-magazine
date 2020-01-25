@@ -101,7 +101,7 @@ h1 {
         @include tiles-container(95vw, auto, auto, 300px);
       }
       @include larger-screen {
-        @include tiles-container(auto, auto, 350px, 300px);
+        @include tiles-container(100%, auto, 350px, 300px);
         //@include tiles-container(95vw, auto, auto, 300px);
       }
     }

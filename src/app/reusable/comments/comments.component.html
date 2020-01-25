@@ -30,7 +30,7 @@
     </div>
     <label for="comment">Your comment *</label>
     <textarea name="comment" required maxlength="1000" ngModel id="commentdetail"
-      placeholder="Not more than 1000 words please!"></textarea>
+      placeholder="Not more than 1000 characters please!"></textarea>
     <div class="width75"
       *ngIf="f.form.controls['comment'] && f.form.controls['comment'].status === 'INVALID' && f.form.controls['comment'].touched && f.form.controls['comment'].errors"
       class="error">

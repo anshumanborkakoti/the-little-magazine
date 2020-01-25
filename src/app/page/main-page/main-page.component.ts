@@ -15,6 +15,7 @@ import { IssueService } from '../issues/issues.service';
 })
 export class MainPageComponent implements OnInit, OnDestroy {
   mainImageSource: string;
+  tags: string = '';
   postList: Post[];
   renderMainImage = false;
   renderList = false;
@@ -37,6 +38,9 @@ export class MainPageComponent implements OnInit, OnDestroy {
       .getLatestIssue()
       .subscribe(aLatestIssue => {
         this.mainImageSource = this.imageService.getUnprefixedImage(aLatestIssue.thumbnail.image.publicId);
+        if (Array.isArray(aLatestIssue.thumbnail.image.tags)) {
+          this.tags = aLatestIssue.thumbnail.image.tags.join(',');
+        }
         this.renderMainImage = true;
         this.postSubscription = this.postService
           .getPostsByIssue(aLatestIssue.id)

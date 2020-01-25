@@ -1,7 +1,7 @@
 <app-spinner *ngIf="isLoading"></app-spinner>
 <div class="main-content">
   <img *ngIf="renderMainImage" class="mainImage" [clSrc]="mainImageSource" fetch-format="auto" quality="auto" dpr="auto"
-    width="auto" type="fetch" client_hints="true" sizes="100vw" crop="scale" />
+    width="auto" type="fetch" client_hints="true" sizes="100vw" crop="scale" [alt]="tags" />
   <div class="imageOverlay">
     <div class="overlayText">
       A journal featuring elegant art and literary content from northeast India.

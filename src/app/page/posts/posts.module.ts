@@ -24,6 +24,10 @@ const routes: Route[] = [
   {
     path: 'photoessays/:postid',
     component: PhotographyDetailComponent
+  },
+  {
+    path: 'art/:postid',
+    component: PhotographyDetailComponent
   }
 ];
 
