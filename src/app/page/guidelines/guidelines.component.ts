@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MetaTagService } from 'src/app/meta-tag.service';
 
 @Component({
   template: `
@@ -39,4 +40,31 @@ import { Component } from '@angular/core';
   `,
   styleUrls: ['./guidelines.component.scss']
 })
-export class GuidelinesComponent { }
+export class GuidelinesComponent implements OnInit {
+  constructor(
+    private metaTagService: MetaTagService
+  ) { }
+
+  ngOnInit() {
+    this.addMetaInfo();
+  }
+
+  private addMetaInfo() {
+    const description = `All submissions must be based on or inspired
+    by Northeast India. Additionally, any piece of work that you send
+     must be your own. Please send us only unpublished pieces. This
+     means that your work must not have appeared in print or online websites (including your blog).
+We consider pieces written in English only. To submit a writing piece,
+ please paste it in a Word document (doc. or docx.) with Calibri,
+ 11 size font. If you are submitting more than one piece of writing,
+  please ensure that each piece starts off on a new page. All submissions must
+  include a cover letter pasted in the body of the email and two black and white
+  photographs of yourself attached to the email...`;
+    this.metaTagService.addTags(
+      {
+        title: 'Little Journal NorthEast guidelines',
+        description
+      }
+    );
+  }
+}

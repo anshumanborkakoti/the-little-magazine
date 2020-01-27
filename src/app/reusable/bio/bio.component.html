@@ -1,7 +1,8 @@
 <article>
   <div class="bio-image">
     <img class="bioImage" [clSrc]="bio.thumbnail.image.secureUrl" fetch-format="auto" quality="auto" dpr="auto"
-      width="auto" responsive type="fetch" crop="scale" client_hints="true" sizes="100vw" />
+      width="auto" responsive type="fetch" crop="scale" client_hints="true" sizes="100vw"
+      [alt]="bio.thumbnail.image.tagsAsString" />
   </div>
   <div class="bio-container">
     <div class="bio-header">{{ bio.thumbnail.header }}</div>

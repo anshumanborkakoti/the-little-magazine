@@ -4,6 +4,7 @@ import { MastHead } from './masthead.model';
 import { BioModel } from 'src/app/reusable/bio/bio.model';
 import { Thumbnail } from 'src/app/models/thumbnail.model';
 import { Image } from 'src/app/models/image.model';
+import { MetaTagService } from 'src/app/meta-tag.service';
 
 @Component({
   selector: 'app-masthead',
@@ -15,7 +16,10 @@ export class MastheadComponent implements OnInit {
 
   bios: BioModel[];
 
-  constructor(public mastHeadService: MastHeadService) { }
+  constructor(
+    private mastHeadService: MastHeadService,
+    private metaTagService: MetaTagService
+  ) { }
 
   ngOnInit() {
 
@@ -33,7 +37,21 @@ export class MastheadComponent implements OnInit {
         const bio = new BioModel(name, thumbnail);
         return bio;
       });
+    this.addMetaInfo();
     return this.bios;
+  }
+
+  private addMetaInfo() {
+    const pbBio = this.bios.filter(aBio => aBio.name === 'Prarthana Banikya, Founder and Managing Editor');
+    const description = pbBio[0].thumbnail.content;
+    this.metaTagService.addTags(
+      {
+        title: 'Little Journal NorthEast Masthead',
+        description,
+        image: pbBio[0].thumbnail.image.secureUrl,
+        summaryImage: pbBio[0].thumbnail.image.secureUrl,
+      }
+    );
   }
 
 }

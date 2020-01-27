@@ -4,6 +4,7 @@ import { PostsService } from '../posts/posts.service';
 import { Post } from 'src/app/models/post.model';
 import { Subscription } from 'rxjs';
 import { IssueService } from '../issues/issues.service';
+import { MetaTagService } from 'src/app/meta-tag.service';
 
 @Component({
   selector: 'app-main-page',
@@ -15,7 +16,7 @@ import { IssueService } from '../issues/issues.service';
 })
 export class MainPageComponent implements OnInit, OnDestroy {
   mainImageSource: string;
-  tags: string = '';
+  tags = '';
   postList: Post[];
   renderMainImage = false;
   renderList = false;
@@ -29,7 +30,8 @@ export class MainPageComponent implements OnInit, OnDestroy {
   constructor(
     private imageService: ImageService = null,
     private postService: PostsService,
-    private issueService: IssueService
+    private issueService: IssueService,
+    private metaTagService: MetaTagService
   ) { }
 
   ngOnInit() {
@@ -39,7 +41,7 @@ export class MainPageComponent implements OnInit, OnDestroy {
       .subscribe(aLatestIssue => {
         this.mainImageSource = this.imageService.getUnprefixedImage(aLatestIssue.thumbnail.image.publicId);
         if (Array.isArray(aLatestIssue.thumbnail.image.tags)) {
-          this.tags = aLatestIssue.thumbnail.image.tags.join(',');
+          this.tags = aLatestIssue.thumbnail.image.tagsAsString;
         }
         this.renderMainImage = true;
         this.postSubscription = this.postService
@@ -47,10 +49,22 @@ export class MainPageComponent implements OnInit, OnDestroy {
           .subscribe(aPosts => {
             this.postList = aPosts;
             this.renderList = true;
+            this.addMetaInfo();
           });
       });
   }
 
+
+  private addMetaInfo() {
+    this.metaTagService.addTags(
+      {
+        title: 'Little Journal NorthEast latest issues',
+        description: 'A journal featuring elegant art and literary content from northeast India',
+        image: this.mainImageSource,
+        summaryImage: this.mainImageSource,
+      }
+    );
+  }
   ngOnDestroy(): void {
     if (this.postSubscription) {
       this.postSubscription.unsubscribe();

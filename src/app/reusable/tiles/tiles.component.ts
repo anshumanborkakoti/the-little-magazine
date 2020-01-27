@@ -13,6 +13,7 @@ export class TilesComponent implements OnInit {
   @Input() footerContent;
   @Input() imageCredit;
   @Input() showImage = true;
+  @Input() alt = '';
 
   constructor() { }
 

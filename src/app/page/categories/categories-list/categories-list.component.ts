@@ -4,6 +4,7 @@ import { CategoriesService } from '../categories.service';
 import { Router, NavigationExtras, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { ImageService } from 'src/app/image.service';
 import { Subscription } from 'rxjs';
+import { MetaTagService } from 'src/app/meta-tag.service';
 
 @Component({
   selector: 'app-categories-list',
@@ -15,7 +16,8 @@ export class CategoriesListComponent implements OnInit, OnDestroy {
   constructor(
     private categoryService: CategoriesService,
     private router: Router,
-    protected imageService: ImageService
+    protected imageService: ImageService,
+    private metaTagService: MetaTagService
   ) { }
 
   private categoriesSubscription = new Subscription();
@@ -33,8 +35,24 @@ export class CategoriesListComponent implements OnInit, OnDestroy {
         } else {
           this.categories = [aCategories];
         }
+        this.addMetaInfo(this.categories);
       });
     this.categoryService.getAllCategories();
+  }
+
+  private addMetaInfo(aCategories: Category[]) {
+    let description = 'Categories of The Little Journal of Northeast India, ';
+    for (const category of aCategories) {
+      description += `${category.label},`;
+    }
+    this.metaTagService.addTags(
+      {
+        title: 'Little Journal NorthEast categories',
+        description,
+        image: aCategories[0].thumbnail.image.secureUrl,
+        summaryImage: aCategories[0].thumbnail.image.secureUrl,
+      }
+    )
   }
 
   onCategorySelected(categoryId: string) {

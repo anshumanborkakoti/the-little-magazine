@@ -13,7 +13,7 @@ h1 {
   display: grid;
   @include small-screen {
     grid-template-columns: 95vw;
-    grid-template-rows: min-content min-content min-content min-content 1fr max-content max-content;
+    grid-template-rows: min-content min-content min-content min-content 1fr minmax(max-content, 50vh) max-content;
     grid-template-areas:
       'header-image'
       'caption'
@@ -26,7 +26,7 @@ h1 {
 
   @include medium-screen {
     grid-template-columns: 95vw;
-    grid-template-rows: min-content min-content min-content min-content 1fr min-content max-content;
+    grid-template-rows: min-content min-content min-content min-content 1fr minmax(max-content, 50vh) max-content;
     grid-template-areas:
       'header-image'
       'caption'

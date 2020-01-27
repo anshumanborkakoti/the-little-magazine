@@ -4,7 +4,7 @@
     [headerImagePath]="imageService.getUnprefixedImage(post.thumbnail.image.publicId)"
     [footerContent]="post.thumbnail.footer" [header]="post.thumbnail.header" [imageCaption]="post.thumbnail.caption"
     [imageCredit]="post.thumbnail.image.credit"
-    routerLink='{{post.category.name | lowercase| removespaces}}/{{post.id}}'>
+    routerLink='{{post.category.name | lowercase| removespaces}}/{{post.id}}' [alt]="post.thumbnail.image.tagsAsString">
   </app-tiles>
   <div *ngIf="posts.length === 0">No Posts!</div>
 </div>

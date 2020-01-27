@@ -4,5 +4,5 @@
     [headerImagePath]="imageService.getUnprefixedImage(category.thumbnail.image.publicId)"
     [footerContent]="category.thumbnail.footer" [header]="category.thumbnail.header"
     [imageCaption]="category.thumbnail.caption" (click)="onCategorySelected(category.id)"
-    [imageCredit]="category.thumbnail.image.credit"></app-tiles>
+    [imageCredit]="category.thumbnail.image.credit" [alt]="category.thumbnail.image.tagsAsString"></app-tiles>
 </div>

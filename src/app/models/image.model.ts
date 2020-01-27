@@ -37,7 +37,16 @@ export class Image implements CmsClass<Image> {
     public credit = ''
   ) {
   }
+
+  get tagsAsString() {
+    let val = '';
+    if (Array.isArray(this.tags) && this.tags.length) {
+      val = this.tags.join(',');
+    }
+    return val;
+  }
 }
+
 export function createImage({ id, publicId, format, tags, secureUrl, url, _id, credit }): Image {
   return new Image(
     publicId,
