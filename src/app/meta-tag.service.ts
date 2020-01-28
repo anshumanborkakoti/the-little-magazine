@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
-import { ActivatedRoute, Router } from '@angular/router';
 import { WindowRef } from './reusable/window.service';
 
 
@@ -44,6 +43,9 @@ export class MetaTagService {
     private windowSer: WindowRef
   ) { }
 
+  private readonly DEFAULT_IMAGE =
+    'https://res.cloudinary.com/the-little-journal-com/image/upload/c_thumb,w_200,g_face/v1563200107/tljne/Typewriter_main_page.jpg';
+
   addTags(info: MetaInformation) {
     const tags = [
       {
@@ -56,48 +58,59 @@ export class MetaTagService {
       },
       {
         name: 'og:type',
+        property: 'og:type',
         content: 'website'
       },
       {
         name: 'og:url',
+        property: 'og:url',
         content: this.windowSer.nativeWindow.location.href
       },
       {
         name: 'og:title',
+        property: 'og:title',
         content: info.title
       },
       {
         name: 'og:description',
+        property: 'og:description',
         content: info.description
       },
       {
         name: 'og:image',
-        content: info.image || `${this.windowSer.nativeWindow.location.origin}/assets/img/logo.png`
+        property: 'og:image',
+        content: info.image || this.DEFAULT_IMAGE
       },
       {
         name: 'twitter:card',
-        content: info.summaryImage || `${this.windowSer.nativeWindow.location.origin}/assets/img/logo.png`
+        property: 'twitter:card',
+        content: info.summaryImage || this.DEFAULT_IMAGE
       },
       {
         name: 'twitter:url',
+        property: 'twitter:url',
         content: this.windowSer.nativeWindow.location.href
       },
       {
         name: 'twitter:title',
+        property: 'twitter:title',
         content: info.title
       },
       {
         name: 'twitter:description',
+        property: 'twitter:description',
         content: info.description
       },
       {
         name: 'twitter:image',
-        content: info.image || `${this.windowSer.nativeWindow.location.origin}/assets/img/logo.png`
+        property: 'twitter:image',
+        content: info.image || this.DEFAULT_IMAGE
       }
     ];
     for (const tag of tags) {
       if (tag.content && tag.content.trim()) {
-        this.meta.updateTag(tag);
+        // this.meta.removeTag(`name='${tag.name}'`);
+        this.meta.updateTag(tag, `name='${tag.name}'`);
       }
     }
   }
