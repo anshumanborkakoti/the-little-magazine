@@ -45,9 +45,8 @@
 @media only screen and (max-width: 750px) {
   article {
     box-sizing: border-box;
-    height: 100vh;
     display: grid;
-    grid-template-rows: [image-area-start] auto [image-area-end content-area-start] max-content [content-area-end];
+    grid-template-rows: [image-area-start] 35vh [image-area-end content-area-start] max-content [content-area-end];
     grid-template-columns: [column-start] 90% [column-end];
     row-gap: 10px;
     justify-content: space-evenly;
