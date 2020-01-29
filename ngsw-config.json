@@ -15,10 +15,10 @@
           "/*.js"
         ],
         "urls": [
-          "**/res.cloudinary.com/**",
-          "**/fonts.google.com/**",
-          "**/fonts.gstatic.com/**",
-          "**/s3.ap-south-1.amazonaws.com/issues.the-little-journal.com/**"
+          "https://res.cloudinary.com/**",
+          "https://fonts.google.com/**",
+          "https://fonts.gstatic.com/**",
+          "https://s3.ap-south-1.amazonaws.com/issues.the-little-journal.com/**"
         ]
       }
     },
@@ -38,11 +38,10 @@
     {
       "name": "tljneapi",
       "urls": [
-        "**/tljneapi/categories",
-        "**/tljneapi/issues",
-        "**/tljneapi/posts/**",
-        "**/tljneapi/posts?**",
-        "**/tljneapi/approved/comments**"
+        "https://api.the-little-journal.com/tljneapi/categories/**",
+        "https://api.the-little-journal.com/tljneapi/issues/**",
+        "https://api.the-little-journal.com/tljneapi/posts/**",
+        "https://api.the-little-journal.com/tljneapi/posts?**"
       ],
       "version": 2,
       "cacheConfig": {
