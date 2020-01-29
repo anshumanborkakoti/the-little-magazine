@@ -15,10 +15,10 @@
           "/*.js"
         ],
         "urls": [
-          "https://res.cloudinary.com/**",
-          "https://fonts.google.com/**",
-          "https://fonts.gstatic.com/**",
-          "https://s3.ap-south-1.amazonaws.com/issues.the-little-journal.com/**"
+          "https://res.cloudinary.com",
+          "https://fonts.google.com",
+          "https://fonts.gstatic.com",
+          "https://s3.ap-south-1.amazonaws.com/issues.the-little-journal.com"
         ]
       }
     },
@@ -38,10 +38,9 @@
     {
       "name": "tljneapi",
       "urls": [
-        "https://api.the-little-journal.com/tljneapi/categories/**",
-        "https://api.the-little-journal.com/tljneapi/issues/**",
-        "https://api.the-little-journal.com/tljneapi/posts/**",
-        "https://api.the-little-journal.com/tljneapi/posts?**"
+        "https://api.the-little-journal.com/tljneapi/categories",
+        "https://api.the-little-journal.com/tljneapi/issues",
+        "https://api.the-little-journal.com/tljneapi/posts"
       ],
       "version": 2,
       "cacheConfig": {
@@ -49,6 +48,17 @@
         "timeout": "15s",
         "maxSize": 100,
         "strategy": "performance"
+      }
+    },
+    {
+      "name": "comments",
+      "urls": ["https://api.the-little-journal.com/tljneapi/comments"],
+      "version": 2,
+      "cacheConfig": {
+        "maxAge": "1h",
+        "timeout": "15s",
+        "maxSize": 100,
+        "strategy": "freshness"
       }
     }
   ]
