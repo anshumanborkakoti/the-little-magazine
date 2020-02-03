@@ -116,3 +116,18 @@
   @include primary-bold-font();
   color: red;
 }
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@mixin blink() {
+  animation: blink 1s;
+  animation-iteration-count: infinite;
+}

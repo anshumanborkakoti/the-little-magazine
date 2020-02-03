@@ -1,6 +1,7 @@
 @import '../../assets/sass/partials/utils';
 @import '../../assets/sass/partials/theme-default';
 @import '../../assets/sass/partials/breakpoints';
+
 .header {
   .header-menu-list {
     height: 40px;
@@ -21,6 +22,9 @@
       li a img {
         width: 20px;
         height: 20px;
+        &.A2HS {
+          @include blink;
+        }
       }
     }
   }

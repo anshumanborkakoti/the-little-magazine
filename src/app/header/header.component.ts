@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { WindowRef } from '../reusable/window.service';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss', './util-modal.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
+  private deferredInstallPrompt: any = null;
+
+  constructor(
+    private window: WindowRef,
+    private changeDetRef: ChangeDetectorRef
+  ) { }
+
   hideModal = true;
+  showA2hsIcon = false;
+
   headers: Array<{ label: string; route: string }> = [
     {
       label: 'Home',
@@ -41,7 +52,6 @@ export class HeaderComponent implements OnInit {
       route: '/contactus'
     }
   ];
-  constructor() {}
 
   openModal() {
     this.hideModal = false;
@@ -50,5 +60,40 @@ export class HeaderComponent implements OnInit {
   closeModal() {
     this.hideModal = true;
   }
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.window.nativeWindow.matchMedia('(display-mode: standalone)').matches) {
+      // Already installed
+      this.showA2hsIcon = false;
+      return;
+    } else {
+      this.showA2hsIcon = true;
+    }
+    const saveBeforeInstallPromptEvent = (event: Event) => {
+      event.preventDefault();
+      this.deferredInstallPrompt = event;
+      // Needs to install
+      this.showA2hsIcon = true;
+    };
+    this.window.nativeWindow.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
+    this.window.nativeWindow.addEventListener('appinstalled', () => { this.showA2hsIcon = false; this.changeDetRef.detectChanges(); });
+
+  }
+
+
+  async addToHomeScreen(event: Event) {
+    event.preventDefault();
+    try {
+      this.deferredInstallPrompt.prompt();
+      const userChoice = await this.deferredInstallPrompt.userChoice;
+      if (userChoice.outcome === 'accepted') {
+        console.log('User accepted the A2HS prompt');
+      } else {
+        console.log('User dismissed the A2HS prompt');
+        this.showA2hsIcon = true;
+        this.changeDetRef.detectChanges();
+      }
+    } catch (error) {
+      console.error(`A2HS failed. Reason: ${error}`);
+    }
+  }
 }

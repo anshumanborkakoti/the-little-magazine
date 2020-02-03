@@ -9,6 +9,12 @@
   </ul>
   <div class="socialIcons">
     <ul>
+      <li *ngIf="showA2hsIcon">
+        <a href="#" target="_self" (click)="addToHomeScreen($event)">
+          <img src="../../assets/img/icons/add_to_home_screen.svg" alt="Add TLJNE as an app to your home screen!"
+            class="A2HS" />
+        </a>
+      </li>
       <li>
         <a href="https://www.facebook.com/thelittlejournalofneindia/" target="_blank">
           <img src="../../assets/img/icons/_ionicons_svg_logo-facebook.svg" alt="Facebook" />
