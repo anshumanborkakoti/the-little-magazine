@@ -28,7 +28,7 @@ export class MastHeadService {
       ),
       new MastHead(
         this.imageService.getImage('masthead/Parinitha_masthead'),
-        'Parinitha Konowar, Art and Illustrations Editor',
+        'Parinitha Konanur, Art and Illustrations Editor',
         'Parinitha is an artist, illustrator and designer with a degree in Fine Arts ' +
         'from Karnataka Chitrakala Parishath. She is particularly passionate about urban and travel sketching' +
         'and believes that sketching is the one of the most effective ways to slow down, observe and learn about' +

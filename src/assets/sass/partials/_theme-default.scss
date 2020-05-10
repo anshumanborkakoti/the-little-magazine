@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Prata&display=swap');
 
 @mixin font-family {
-  font-family: 'Prata', 'Roboto Slab', 'Helvetica', 'Times New Roman', 'Times',
-    serif !important;
+  font-family: 'Prata', 'Roboto Slab', 'Helvetica', 'Times New Roman', 'Times', serif !important;
+  font-display: swap;
 }
 
 @mixin primary-bold-font {
