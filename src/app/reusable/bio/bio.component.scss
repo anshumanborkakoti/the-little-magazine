@@ -51,12 +51,12 @@
     row-gap: 10px;
     justify-content: space-evenly;
     justify-items: center;
+    align-items: center;
     @include tiles-common-styling;
 
     .bio-image {
       grid-row: image-area-start/image-area-end;
-      justify-self: center;
-      padding: 0 1%;
+      height: 100%;
       .bioImage {
         max-height: 100%;
       }
