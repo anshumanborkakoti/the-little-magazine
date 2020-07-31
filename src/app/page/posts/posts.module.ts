@@ -22,6 +22,10 @@ const routes: Route[] = [
     component: EssayDetailComponent
   },
   {
+    path: 'shortstories/:postid',
+    component: EssayDetailComponent
+  },
+  {
     path: 'photoessays/:postid',
     component: PhotographyDetailComponent
   },
