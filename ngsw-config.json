@@ -18,6 +18,8 @@
           "https://res.cloudinary.com",
           "https://fonts.google.com",
           "https://fonts.gstatic.com",
+          "https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap",
+          "https://fonts.googleapis.com/css?family=Prata&display=swap",
           "https://s3.ap-south-1.amazonaws.com/issues.the-little-journal.com"
         ]
       }
@@ -42,9 +44,9 @@
         "https://tljneapi.herokuapp.com/tljneapi/issues",
         "https://tljneapi.herokuapp.com/tljneapi/posts"
       ],
-      "version": 2,
+      "version": 3,
       "cacheConfig": {
-        "maxAge": "30d",
+        "maxAge": "2d",
         "timeout": "15s",
         "maxSize": 100,
         "strategy": "performance"

@@ -27,7 +27,12 @@ export const cloudinaryLib = {
     BrowserModule,
     HttpClientModule,
     MainRoutesModule,
-    CloudinaryModule.forRoot(cloudinaryLib, { cloud_name: environment.cloudinary_cloud_name }),
+    CloudinaryModule.forRoot(cloudinaryLib, {
+      cloud_name: environment.cloudinary_cloud_name,
+      responsive_use_breakpoints: true,
+      client_hints: true,
+      secure: true
+    }),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
