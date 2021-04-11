@@ -76,7 +76,7 @@
     justify-content: space-evenly;
     align-items: baseline;
     width: 100%;
-    min-height: 65vh;
+    max-height: 65vh;
     height: 100%;
     .mainImage {
       grid-column: 1/6;

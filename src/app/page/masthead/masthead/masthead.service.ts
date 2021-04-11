@@ -34,6 +34,20 @@ export class MastHeadService {
         'and believes that sketching is the one of the most effective ways to slow down, observe and learn about' +
         'our surroundings in a fast - paced world. Parinitha is the author and illustrator of the upcoming Children’s ' +
         'Book Ajji and Mili into the Forest.'
+      ),
+      new MastHead(
+        this.imageService.getImage('masthead/Shivani_masthead'),
+        'Shivani Shah, Marketing and Media Advisor',
+        'Shivani has over 15 years of experience as a campaigner, researcher, and editor. She’s worked with leading organizations across' +
+        ' industries such as The Asian Age, The Sanctuary Asia, The Times ofIndia, Greenpeace India, and The Indian Express. When she’s' +
+        ' not working, she can be found sitting by a window reading a book, drinking copious amounts of tea, or watching movies. '
+      ),
+      new MastHead(
+        this.imageService.getImage('masthead/Anshuman_masthead'),
+        'Anshuman Borkakoti, Technical Advisor and Website Manager',
+        'Anshuman is a software engineer, a JeetKune Do practitioner, ' +
+        'and a Web developer. When he’s not coding or wading through Bangalore traffic, he can be found lazing with his cats. He shares' +
+        ' a love for Khao Suey, Asimov, war movies, Bruce Lee, and Assam.'
       )
     ]
   }
