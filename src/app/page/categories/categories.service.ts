@@ -12,7 +12,7 @@ import { createThumbnail } from 'src/app/models/thumbnail.model';
 export class CategoriesService implements OnDestroy {
 
   private categoriesChanged = new Subject<Category[]>();
-  private isLoading = new BehaviorSubject(false);
+  private isLoading = new BehaviorSubject(true);
   private allCategories: Category[];
   private isSaved = new Subject<boolean>();
   private isDeleted = new Subject<boolean>();

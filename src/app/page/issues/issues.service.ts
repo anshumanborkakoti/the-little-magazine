@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 })
 export class IssueService implements OnDestroy {
   private issuesChanged = new Subject<Issue[]>();
-  private isLoading = new BehaviorSubject(false);
+  private isLoading = new BehaviorSubject(true);
   private allIssues: Issue[];
   private isSaved = new Subject<boolean>();
   private isDeleted = new Subject<boolean>();

@@ -1,6 +1,6 @@
-@import '../../../assets/sass/partials/utils';
-@import '../../../assets/sass/partials/theme-default';
-@import '../../../assets/sass/partials/breakpoints';
+@import "../../../assets/sass/partials/utils";
+@import "../../../assets/sass/partials/theme-default";
+@import "../../../assets/sass/partials/breakpoints";
 
 article {
   max-height: 100%;
@@ -34,8 +34,18 @@ article {
   .article-header-image {
     object-fit: cover;
     grid-row: image-header-start/image-header-end;
-    width: 100%;
-    height: 100%;
+    @include small-screen {
+      width: 100%;
+      height: 100%;
+    }
+    @include larger-screen {
+      width: 400px;
+      height: 450px;
+    }
+    @include medium-screen {
+      width: 400px;
+      height: 450px;
+    }
     border-radius: 10px 10px 0 0;
   }
   .article-credit {

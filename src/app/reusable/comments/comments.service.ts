@@ -13,7 +13,7 @@ export class CommentsService {
 
   private readonly api_url = `${environment.api_url}/comments`;
   private isSaved = new Subject<boolean>();
-  private isLoading = new BehaviorSubject(false);
+  private isLoading = new BehaviorSubject(true);
   constructor(
     private http: HttpClient
   ) { }

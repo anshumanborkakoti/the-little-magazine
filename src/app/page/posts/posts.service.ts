@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Post, createPost } from 'src/app/models/post.model';
-import { Subject, BehaviorSubject } from 'rxjs';
+import { Subject, BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 export class PostsService {
 
   private postsChanged = new Subject<Post[]>();
-  private isLoading = new BehaviorSubject(false);
+  private isLoading = new BehaviorSubject(true);
   private allPosts: Post[];
   private get API_URL() {
     return `${environment.api_url}/posts`;
@@ -24,8 +24,8 @@ export class PostsService {
     return this.postsChanged;
   }
 
-  getIsLoading(): BehaviorSubject<boolean> {
-    return this.isLoading;
+  getIsLoading(): Observable<boolean> {
+    return this.isLoading.asObservable();
   }
 
   getPost(postId: string): Subject<Post> {
