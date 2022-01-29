@@ -1,6 +1,6 @@
-@import '../../../assets/sass/partials/utils';
-@import '../../../assets/sass/partials/theme-default';
-@import '../../../assets/sass/partials/breakpoints';
+@import "../../../assets/sass/partials/utils";
+@import "../../../assets/sass/partials/theme-default";
+@import "../../../assets/sass/partials/breakpoints";
 
 article {
   max-height: 100%;
@@ -41,5 +41,6 @@ article {
     grid-row: description-start/description-end;
     font-size: 1rem;
     padding: 0 0.8em;
+    justify-self: center;
   }
 }
