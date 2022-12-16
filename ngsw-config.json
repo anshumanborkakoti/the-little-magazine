@@ -40,9 +40,9 @@
     {
       "name": "tljneapi",
       "urls": [
-        "https://tljneapi.herokuapp.com/tljneapi/categories",
-        "https://tljneapi.herokuapp.com/tljneapi/issues",
-        "https://tljneapi.herokuapp.com/tljneapi/posts"
+        "https://api.the-little-journal.com/tljneapi/categories",
+        "https://api.the-little-journal.com/tljneapi/issues",
+        "https://api.the-little-journal.com/tljneapi/posts"
       ],
       "version": 3,
       "cacheConfig": {
@@ -54,7 +54,9 @@
     },
     {
       "name": "comments",
-      "urls": ["https://tljneapi.herokuapp.com/tljneapi/comments"],
+      "urls": [
+        "https://api.the-little-journal.com/tljneapi/comments"
+      ],
       "version": 2,
       "cacheConfig": {
         "maxAge": "1h",
