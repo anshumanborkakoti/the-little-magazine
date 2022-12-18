@@ -26,4 +26,19 @@ export class AppComponent implements OnInit {
       });
     }
   }
+
+  onActivate() {
+    this.scrollTop();
+  }
+
+  private scrollTop() {
+    let scrollToTop = this.window.nativeWindow.setInterval(() => {
+      let pos = this.window.nativeWindow.scrollY;
+      if (pos > 0) {
+        this.window.nativeWindow.scrollTo(0, pos - 20); // how far to scroll on each step
+      } else {
+        this.window.nativeWindow.clearInterval(scrollToTop);
+      }
+    }, 16);
+  }
 }

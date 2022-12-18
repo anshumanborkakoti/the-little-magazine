@@ -7,26 +7,21 @@ article {
   cursor: default;
   display: inline-grid;
   grid-template-rows:
-    [photo-start]
-    1fr
-    [photo-end caption-start]
-    min-content
-    [caption-end description-start]
-    min-content
-    [description-end];
+    [photo-start] 1fr [photo-end caption-start] min-content [caption-end description-start] min-content [description-end];
   row-gap: 0.5em;
   grid-template-columns: minmax(auto, 95vw);
   border-radius: 10px;
   background-color: $color-primary;
   box-shadow: 5px 5px 10px darken(rgba-secondary-2(0.7), 10%);
+
   .photo-image {
-    object-fit: cover;
     grid-row: photo-start/photo-end;
     width: 100%;
     height: 100%;
     max-height: 90vh;
     border-radius: 10px 10px 0 0;
   }
+
   .photo-caption {
     grid-row: caption-start/caption-end;
     justify-self: center;
@@ -37,6 +32,7 @@ article {
     overflow-y: auto;
     padding: 0.5em;
   }
+
   .photo-description {
     grid-row: description-start/description-end;
     font-size: 1rem;
