@@ -40,9 +40,9 @@
     {
       "name": "tljneapi",
       "urls": [
-        "https://api.the-little-journal.com/tljneapi/categories",
-        "https://api.the-little-journal.com/tljneapi/issues",
-        "https://api.the-little-journal.com/tljneapi/posts"
+        "https://tljne-cms.vercel.app/tljneapi/categories",
+        "https://tljne-cms.vercel.app/tljneapi/issues",
+        "https://tljne-cms.vercel.app/tljneapi/posts"
       ],
       "version": 3,
       "cacheConfig": {
@@ -55,7 +55,7 @@
     {
       "name": "comments",
       "urls": [
-        "https://api.the-little-journal.com/tljneapi/comments"
+        "https://tljne-cms.vercel.app/tljneapi/comments"
       ],
       "version": 2,
       "cacheConfig": {
