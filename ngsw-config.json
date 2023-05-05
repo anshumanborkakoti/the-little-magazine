@@ -40,9 +40,9 @@
     {
       "name": "tljneapi",
       "urls": [
-        "https://tljne-cms.vercel.app/tljneapi/categories",
-        "https://tljne-cms.vercel.app/tljneapi/issues",
-        "https://tljne-cms.vercel.app/tljneapi/posts"
+        "https://tljneapi.vercel.app/tljneapi/categories",
+        "https://tljneapi.vercel.app/tljneapi/issues",
+        "https://tljneapi.vercel.app/tljneapi/posts"
       ],
       "version": 3,
       "cacheConfig": {
@@ -55,7 +55,7 @@
     {
       "name": "comments",
       "urls": [
-        "https://tljne-cms.vercel.app/tljneapi/comments"
+        "https://tljneapi.vercel.app/tljneapi/comments"
       ],
       "version": 2,
       "cacheConfig": {
