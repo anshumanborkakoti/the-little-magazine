@@ -22,11 +22,6 @@ export class MastHeadService {
         `Juti (which means jasmine in Assamese) was born and raised in Guwahati, Assam, and currently lives in Bangalore. Juti is an editor by profession with a postgraduate degree in English Language and Literature. She’s also a trained Odissi dancer and occasionally likes experimenting with folk and contemporary dance styles. She loves dogs, traveling and baking (in no particular order) and dreams of being a pet parent someday.`
       ),
       new MastHead(
-        this.imageService.getImage('masthead/Shiron_masthead'),
-        'Shiron Antony, Flash Fiction and Essay Editor',
-        `Shiron is a postgraduate in English Literature and has over ten years of experience in editing and copyediting. He loves poetry and horror films and adores the French novel, Maldoror, and works of the Roman poet, Martial. He considers himself “old school” and thinks that that’s cool. For sustenance, Shiron works for a large corporation pretending he knows English.`
-      ),
-      new MastHead(
         this.imageService.getImage('masthead/Parinitha_masthead'),
         'Parinitha Konanur, Art and Illustrations Editor',
         'Parinitha is an artist, illustrator and designer with a degree in Fine Arts ' +
@@ -44,8 +39,8 @@ export class MastHeadService {
       ),
       new MastHead(
         this.imageService.getImage('masthead/Anshuman_masthead'),
-        'Anshuman Borkakoti, Technical Advisor and Website Manager',
-        'Anshuman is a software engineer, a JeetKune Do practitioner, ' +
+        'Anshuman Borkakoti, Co-founder, Technical Advisor and Website Manager',
+        'Anshuman is a software engineer, a Jeet Kune Do practitioner, ' +
         'and a Web developer. When he’s not coding or wading through Bangalore traffic, he can be found lazing with his cats. He shares' +
         ' a love for Khao Suey, Asimov, war movies, Bruce Lee, and Assam.'
       )
